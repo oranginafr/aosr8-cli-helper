@@ -1,4 +1,4 @@
-# Obsidian VOSS CLI Helper
+# Obsidian AOSR8 CLI Helper
 
 An Obsidian plugin that provides intelligent autocompletion for alcatel aos r8 (VSP) CLI commands. 
 
