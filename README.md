@@ -1,6 +1,6 @@
 # Obsidian VOSS CLI Helper
 
-An Obsidian plugin that provides intelligent autocompletion for VOSS (VSP) CLI commands. 
+An Obsidian plugin that provides intelligent autocompletion for alcatel aos r8 (VSP) CLI commands. 
 
 Turn your Obsidian notes into a powerful networking CLI editor.
 
