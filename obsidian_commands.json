@@ -21,36 +21,62 @@
       "re-authentication": {}
     },
     "accounting": {
-      "command": {},
+      "command": {
+        "server1": {}
+      },
       "radius": {
         "calling-station-id": {}
       },
-      "session": {}
+      "session": {
+        "server1": {}
+      }
     },
     "authentication": {
       "default": {}
     },
     "certificate": {
       "convert-cert": {
-        "cert": {}
+        "cert": {
+          "cert-file-name": {}
+        }
       },
-      "delete": {},
+      "delete": {
+        "cert_file": {}
+      },
       "generate-csr": {},
       "generate-rsa-key": {
-        "key-file": {}
+        "key-file": {
+          "key_file": {}
+        }
       },
       "generate-self-signed": {},
       "install-certificate": {
-        "webview": {}
+        "webview": {
+          "<web-certificate>": {}
+        }
       },
-      "update-ca-certificate": {},
-      "update-crl": {},
-      "update-supplicant-ca-cert": {},
+      "update-ca-certificate": {
+        "ca_file": {}
+      },
+      "update-crl": {
+        "crl_file": {}
+      },
+      "update-supplicant-ca-cert": {
+        "<ca-certificate>": {}
+      },
       "update-supplicant-certificate": {},
       "verify": {
-        "ca-certificate": {}
+        "ca-certificate": {
+          "ca_cert_file": {
+            "certificate": {
+              "cert_file": {}
+            }
+          }
+        }
       },
-      "view": {}
+      "view": {
+        "cert_file": {}
+      }
     },
     "common-criteria": {
       "admin-state": {}
@@ -59,7 +85,9 @@
       "admin-only": {}
     },
     "csr": {
-      "view": {}
+      "view": {
+        "csr-file": {}
+      }
     },
     "device-authentication": {},
     "inactivity-logout": {},
@@ -67,10 +95,19 @@
     "jitc": {
       "admin-state": {}
     },
-    "ldap-server": {},
+    "ldap-server": {
+      "server_name": {
+        "host": {}
+      }
+    },
     "profile": {
       "radius": {
         "nas-ipv6-address": {}
+      },
+      "profile_name": {
+        "radius": {
+          "nas-ipv6-address": {}
+        }
       }
     },
     "radius": {
@@ -84,7 +121,12 @@
     },
     "radius-server": {
       "clear-statistics": {},
-      "health-check": {}
+      "health-check": {},
+      "server_name": {
+        "clear-statistics": {},
+        "health-check": {},
+        "host": {}
+      }
     },
     "session": {
       "console": {}
@@ -94,7 +136,9 @@
       "banned-ip": {
         "release": {}
       },
-      "ip-lockout-threshold": {},
+      "ip-lockout-threshold": {
+        "number": {}
+      },
       "management-stations": {
         "admin-state": {}
       },
@@ -106,7 +150,19 @@
       "command-authorization": {}
     },
     "tacacs-server": {},
-    "test-radius-server": {}
+    "test-radius-server": {
+      "server_name": {
+        "type": {}
+      }
+    },
+    "802.1x": {
+      "re-authentication": {}
+    },
+    "tacacs+-server": {
+      "server_name": {
+        "host": {}
+      }
+    }
   },
   "active-lease-service": {
     "restart": {}
@@ -189,8 +245,13 @@
     "list": {}
   },
   "arp": {
-    "filter": {},
-    "send-gratuitous-arp": {}
+    "filter": {
+      "ip_address": {}
+    },
+    "send-gratuitous-arp": {},
+    "ip_address": {
+      "mac_address": {}
+    }
   },
   "auto-config-abort": {},
   "auto-fabric": {
@@ -253,10 +314,14 @@
     "arp-cache": {},
     "arp-evpn-proxy-cache": {},
     "dhcp-server": {
-      "statistics": {}
+      "statistics": {
+        "dhcpv6-server": {}
+      }
     },
     "dhcpv6-server": {
-      "statistics": {}
+      "statistics": {
+        "dhcp-message-service": {}
+      }
     },
     "efm-oam": {
       "log-history": {},
@@ -284,7 +349,8 @@
       "statistics": {
         "e-tunnel": {},
         "npiv": {},
-        "r-npiv": {}
+        "r-npiv": {},
+        "npiv-proxy": {}
       }
     },
     "fibre-channel": {
@@ -317,7 +383,9 @@
       }
     },
     "loopback-test": {
-      "counters": {}
+      "counters": {
+        "Distributed": {}
+      }
     },
     "mrp": {
       "interconnect": {},
@@ -345,7 +413,10 @@
     },
     "test-oam": {
       "group": {
-        "statistics": {}
+        "statistics": {},
+        "string": {
+          "statistics": {}
+        }
       },
       "statistics": {}
     },
@@ -358,6 +429,10 @@
     "vm-snooping": {
       "database": {},
       "statistics": {}
+    },
+    "arp-filter": {},
+    "ethernet-services": {
+      "nni": {}
     }
   },
   "cloud-agent": {
@@ -368,15 +443,22 @@
   "command-log": {},
   "configuration": {
     "apply": {
-      "network-sync": {}
+      "network-sync": {
+        "filename": {}
+      },
+      "filename": {}
     },
     "backup": {
       "restore": {}
     },
     "cancel": {},
-    "error-file-limit": {},
+    "error-file-limit": {
+      "number": {}
+    },
     "snapshot": {},
-    "syntax-check": {}
+    "syntax-check": {
+      "path/filename": {}
+    }
   },
   "contacting": {
     "alcatel-lucent": {
@@ -398,7 +480,9 @@
   "debug": {
     "ip": {
       "proxy-arp": {
-        "aging-time": {}
+        "aging-time": {
+          "seconds": {}
+        }
       }
     }
   },
@@ -632,10 +716,17 @@
   "ftp": {},
   "hash-control": {},
   "health": {
-    "interval": {},
-    "threshold": {}
+    "interval": {
+      "seconds": {}
+    },
+    "threshold": {},
+    "54-2": {}
   },
-  "history": {},
+  "history": {
+    "number": {
+      "!": {}
+    }
+  },
   "how": {
     "is": {
       "the": {
@@ -650,8 +741,15 @@
     "echo": {},
     "messages": {},
     "timestamp": {},
-    "type": {},
-    "unreachable": {}
+    "type": {
+      "type": {
+        "code": {
+          "code": {}
+        }
+      }
+    },
+    "unreachable": {},
+    "add-mask": {}
   },
   "iec": {
     "message-type": {
@@ -717,11 +815,49 @@
       "break-out": {},
       "ptp": {
         "p2p": {}
+      },
+      "chassis/slot/port": {
+        "alias": {
+          "description": {}
+        },
+        "macsec": {
+          "clear-tag-mode": {},
+          "confidentiality-offset": {},
+          "control-protocol-bypass-profile": {
+            "profile-name": {}
+          },
+          "mka-profile": {
+            "profile_name": {
+              "mka-ethertype": {
+                "0xXXXX": {
+                  "mka-da-mac": {
+                    "xx:xx:xx:xx:xx:xx": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ptp": {
+          "p2p": {
+            "admin-state": {}
+          }
+        },
+        "tdr": {
+          "enable": {}
+        }
       }
     },
-    "portgroup": {},
+    "portgroup": {
+      "port-group-number": {
+        "chassis/slot/group": {}
+      }
+    },
     "primary-port": {
-      "split-mode": {}
+      "split-mode": {},
+      "chassis/slot/port": {
+        "split-mode": {}
+      }
     },
     "ptp": {
       "admin-state": {}
@@ -730,21 +866,35 @@
     "speed": {},
     "tdr": {},
     "wait-to-restore": {},
-    "wait-to-shutdown": {}
+    "wait-to-shutdown": {},
+    "1-6": {}
   },
   "ip": {
     "access-list": {
-      "address": {}
+      "address": {},
+      "access_list_name": {
+        "address": {
+          "address/prefixLen": {}
+        }
+      }
     },
     "anycast-gateway-mac": {
       "auto": {}
     },
     "bfd": {
       "admin-state": {},
-      "echo-interval": {},
-      "multiplier": {},
-      "receive": {},
-      "transmit": {}
+      "echo-interval": {
+        "echo_interval": {}
+      },
+      "multiplier": {
+        "num": {}
+      },
+      "receive": {
+        "receive_interval": {}
+      },
+      "transmit": {
+        "transmit_interval": {}
+      }
     },
     "bgp": {
       "address-family": {
@@ -758,12 +908,27 @@
         "community": {},
         "local-preference": {},
         "metric": {},
-        "summary-only": {}
+        "summary-only": {},
+        "ip_address": {
+          "ip_mask": {
+            "admin-state": {},
+            "as-set": {},
+            "community": {},
+            "metric": {
+              "value": {}
+            },
+            "summary-only": {}
+          }
+        }
       },
       "always-compare-med": {},
-      "as-origin-interval": {},
+      "as-origin-interval": {
+        "seconds": {}
+      },
       "asn-format": {},
-      "autonomous-system": {},
+      "autonomous-system": {
+        "value": {}
+      },
       "bestpath": {
         "as-path": {
           "ignore": {}
@@ -778,11 +943,19 @@
       "client-to-client": {
         "reflection": {}
       },
-      "cluster-id": {},
+      "cluster-id": {
+        "ip_address": {}
+      },
       "confederation": {
-        "identifier": {},
-        "neighbor": {},
-        "neighbor6": {}
+        "identifier": {
+          "value": {}
+        },
+        "neighbor": {
+          "ip_address": {}
+        },
+        "neighbor6": {
+          "ipv6_address": {}
+        }
       },
       "dampening": {
         "clear": {}
@@ -798,7 +971,9 @@
       "log-neighbor-changes": {},
       "max-neighbors": {},
       "maximum-paths": {},
-      "nbr-template": {},
+      "nbr-template": {
+        "template-name": {}
+      },
       "neighbor": {
         "activate": {
           "l2vpn-vpls": {}
@@ -841,30 +1016,131 @@
         "stats-clear": {},
         "timers": {},
         "ttl-security": {},
-        "update-source": {}
+        "update-source": {},
+        "ip_address": {
+          "activate": {
+            "l2vpn-vpls": {}
+          },
+          "activate-evpn": {},
+          "activate-ipv6": {},
+          "admin-state": {},
+          "advertisement-interval": {
+            "value": {}
+          },
+          "auto-restart": {},
+          "clear": {
+            "soft": {}
+          },
+          "conn-retry-interval": {
+            "seconds": {}
+          },
+          "default-originate": {},
+          "description": {
+            "string": {}
+          },
+          "ebgp-multihop": {},
+          "evpn-nbr-type-fabric": {},
+          "in-aspathlist": {},
+          "in-communitylist": {},
+          "in-prefix6list": {},
+          "in-prefixlist": {},
+          "ipv6-nexthop": {
+            "ipv6_address": {}
+          },
+          "maximum-prefix": {
+            "maximum": {}
+          },
+          "md5": {
+            "key": {}
+          },
+          "nbr-template": {
+            "template-name": {}
+          },
+          "next-hop-self": {},
+          "no": {
+            "ttl-security": {}
+          },
+          "out-aspathlist": {},
+          "out-communitylist": {},
+          "out-prefix6list": {},
+          "out-prefixlist": {},
+          "passive": {},
+          "remote-as": {
+            "value": {}
+          },
+          "remove-private-as": {},
+          "route-map": {},
+          "route-reflector-client": {},
+          "soft-reconfiguration": {},
+          "stats-clear": {},
+          "timers": {
+            "keepalive": {
+              "holdtime": {}
+            }
+          },
+          "ttl-security": {
+            "num": {}
+          },
+          "update-source": {}
+        }
       },
       "network": {
         "admin-state": {},
         "community": {},
         "local-preference": {},
-        "metric": {}
+        "metric": {},
+        "ip_address": {
+          "ip_mask": {
+            "admin-state": {},
+            "community": {},
+            "metric": {
+              "value": {}
+            }
+          }
+        }
       },
       "policy": {
         "aspath-list": {
           "action": {},
-          "priority": {}
+          "priority": {},
+          "name": {
+            "\u201cregular_expression\u201d": {
+              "action": {},
+              "priority": {
+                "value": {}
+              }
+            }
+          }
         },
         "community-list": {
           "action": {},
           "match-type": {},
-          "priority": {}
+          "priority": {},
+          "name": {}
         },
         "prefix-list": {
           "action": {},
           "ge": {},
-          "le": {}
+          "le": {},
+          "name": {
+            "ip_address": {
+              "ip_mask": {
+                "action": {},
+                "ge": {
+                  "value": {}
+                },
+                "le": {
+                  "value": {}
+                }
+              }
+            }
+          }
         },
-        "prefix6-list": {},
+        "prefix6-list": {
+          "pfx_list_name": {
+            "prefix6/pfx_length": {}
+          }
+        },
         "route-map": {
           "action": {},
           "aspath-list": {},
@@ -885,14 +1161,70 @@
           "origin": {},
           "prefix-list": {},
           "prefix6-list": {},
-          "route-filter": {},
-          "weight": {}
+          "route-filter": {
+            "sequence_number": {
+              "route-tag": {
+                "num": {}
+              }
+            }
+          },
+          "weight": {},
+          "name": {
+            "sequence_number": {
+              "action": {},
+              "aspath-list": {
+                "as_name": {}
+              },
+              "asprepend": {
+                "path": {}
+              },
+              "community": {},
+              "community-list": {},
+              "community-mode": {},
+              "community-strip": {
+                "community_list": {}
+              },
+              "lpref": {
+                "value": {}
+              },
+              "lpref-mode": {},
+              "match-community": {},
+              "match-mask": {
+                "ip_address": {}
+              },
+              "match-prefix": {
+                "ip_address": {}
+              },
+              "match-prefix6": {
+                "ipv6_address/mask_length": {}
+              },
+              "match-regexp": {
+                "\u201cregular_expression\u201d": {}
+              },
+              "med": {
+                "value": {}
+              },
+              "med-mode": {},
+              "origin": {},
+              "prefix-list": {
+                "prefix_name": {}
+              },
+              "prefix6-list": {
+                "prefix6_name": {}
+              },
+              "weight": {
+                "value": {}
+              }
+            }
+          }
         }
       },
       "synchronization": {},
       "unicast": {}
     },
-    "default-ttl": {},
+    "default-ttl": {
+      "hops": {}
+    },
     "dhcp": {
       "relay": {
         "admin-state": {},
@@ -900,19 +1232,34 @@
           "insert-agent-information": {
             "error-count": {}
           },
-          "statistics": {}
+          "statistics": {},
+          "insert-agent-informaton": {
+            "error-count": {}
+          }
         },
-        "destination": {},
-        "forward-delay": {},
+        "destination": {
+          "ip_address": {}
+        },
+        "forward-delay": {
+          "seconds": {}
+        },
         "insert-agent-information": {
           "format": {},
           "policy": {}
         },
         "interface": {
           "admin-state": {},
-          "destination": {}
+          "destination": {},
+          "if_name": {
+            "admin-state": {},
+            "destination": {
+              "ip_address": {}
+            }
+          }
         },
-        "maximum-hops": {},
+        "maximum-hops": {
+          "hops": {}
+        },
         "per-interface-mode": {},
         "pxe-support": {}
       }
@@ -925,20 +1272,34 @@
       "admin-state": {}
     },
     "domain-lookup": {},
-    "domain-name": {},
+    "domain-name": {
+      "name": {}
+    },
     "dos": {
       "arp-poison": {
-        "restricted-address": {}
+        "restricted-address": {
+          "ip_address": {}
+        }
       },
       "scan": {
-        "close-port-penalty": {},
-        "decay": {},
-        "tcp": {
-          "open-port-penalty": {}
+        "close-port-penalty": {
+          "penalty_value": {}
         },
-        "threshold": {},
+        "decay": {
+          "decay_value": {}
+        },
+        "tcp": {
+          "open-port-penalty": {
+            "penalty_value": {}
+          }
+        },
+        "threshold": {
+          "threshold_value": {}
+        },
         "udp": {
-          "open-port-penalty": {}
+          "open-port-penalty": {
+            "penalty_value": {}
+          }
         }
       },
       "trap": {},
@@ -946,28 +1307,55 @@
     },
     "dvmrp": {
       "admin-state": {},
-      "flash-interval": {},
-      "graft-timeout": {},
+      "flash-interval": {
+        "seconds": {}
+      },
+      "graft-timeout": {
+        "seconds": {}
+      },
       "interface": {
         "mbr-default-information": {},
-        "metric": {}
+        "metric": {},
+        "interface_name": {
+          "mbr-default-information": {},
+          "metric": {
+            "value": {}
+          }
+        }
       },
-      "neighbor-interval": {},
-      "neighbor-timeout": {},
-      "prune-lifetime": {},
-      "prune-timeout": {},
-      "report-interval": {},
-      "route-holddown": {},
-      "route-timeout": {},
+      "neighbor-interval": {
+        "seconds": {}
+      },
+      "neighbor-timeout": {
+        "seconds": {}
+      },
+      "prune-lifetime": {
+        "seconds": {}
+      },
+      "prune-timeout": {
+        "seconds": {}
+      },
+      "report-interval": {
+        "seconds": {}
+      },
+      "route-holddown": {
+        "seconds": {}
+      },
+      "route-timeout": {
+        "seconds": {}
+      },
       "subord-default": {}
     },
     "export": {},
     "helper": {
-      "address": {},
+      "address": {
+        "ip_address": {}
+      },
       "per-vlan-only": {},
       "standard": {},
       "vlan": {
-        "address": {}
+        "address": {},
+        "vlan_id": {}
       }
     },
     "import": {},
@@ -975,12 +1363,31 @@
       "anycast-gateway-address": {},
       "dhcp-client": {},
       "rtr-port": {},
-      "tunnel": {}
+      "tunnel": {},
+      "if_name": {
+        "address": {
+          "ip_address/mask": {
+            "vlan": {
+              "vlan_id": {
+                "rtr-port": {}
+              }
+            }
+          }
+        },
+        "anycast-gateway-address": {
+          "ip_address": {}
+        },
+        "tunnel": {}
+      }
     },
     "isis": {
       "activate-ipv6_ipv4": {},
       "admin-state": {},
-      "area-id": {},
+      "area-id": {
+        "area": {
+          "address": {}
+        }
+      },
       "auth-check": {},
       "auth-type": {},
       "bfd-state": {
@@ -999,7 +1406,9 @@
         "wide-metrics-only": {}
       },
       "level-capability": {},
-      "lsp-lifetime": {},
+      "lsp-lifetime": {
+        "seconds": {}
+      },
       "lsp-wait": {},
       "multi-topology": {},
       "overload-on-boot": {},
@@ -1027,7 +1436,26 @@
         "level-capability": {},
         "lsp-pacing-interval": {},
         "passive": {},
-        "retransmit-interval": {}
+        "retransmit-interval": {},
+        "vlan_id": {
+          "admin-state": {},
+          "bfd-state": {},
+          "csnp-interval": {
+            "seconds": {}
+          },
+          "default-type": {},
+          "hello-auth-type": {},
+          "interface-type": {},
+          "level": {},
+          "level-capability": {},
+          "lsp-pacing-interval": {
+            "milliseconds": {}
+          },
+          "passive": {},
+          "retransmit-interval": {
+            "seconds": {}
+          }
+        }
       }
     },
     "load": {
@@ -1040,12 +1468,26 @@
     },
     "mroute": {
       "interface": {
-        "ttl": {}
+        "ttl": {},
+        "if_": {
+          "name": {
+            "ttl": {
+              "threshold": {}
+            }
+          }
+        }
       },
-      "mbr": {}
+      "mbr": {
+        "admin-state": {}
+      }
     },
     "mroute-boundary": {
-      "extended": {}
+      "extended": {},
+      "if_name": {
+        "scoped_address": {
+          "mask": {}
+        }
+      }
     },
     "multicast": {
       "admin-state": {},
@@ -1055,7 +1497,11 @@
       "flood-unknown": {},
       "forward-mode": {},
       "helper-address": {},
-      "host-list": {},
+      "host-list": {
+        "host_list_name": {
+          "ip_address": {}
+        }
+      },
       "inherit-default-vrf-config": {},
       "initial-packet-buffer": {
         "admin-state": {},
@@ -1070,7 +1516,9 @@
       "port": {
         "max-group": {}
       },
-      "profile": {},
+      "profile": {
+        "profile_name": {}
+      },
       "proxying": {},
       "querier-forwarding": {},
       "query-interval": {},
@@ -1083,30 +1531,82 @@
         "static-source-ip": {}
       },
       "ssm-map": {},
-      "static-group": {},
-      "static-neighbor": {},
-      "static-querier": {},
+      "static-group": {
+        "address": {
+          "vlan": {
+            "vlan-id": {}
+          }
+        },
+        "ip_address": {
+          "service": {
+            "service_id": {
+              "sap": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        }
+      },
+      "static-neighbor": {
+        "service": {
+          "service_id": {
+            "sap": {}
+          }
+        },
+        "vlan": {
+          "vlan_id": {}
+        }
+      },
+      "static-querier": {
+        "service": {
+          "service_id": {
+            "sap": {}
+          }
+        },
+        "vlan": {
+          "vlan_id": {}
+        }
+      },
       "unsolicited-report-interval": {},
       "update-delay-interval": {},
       "version": {},
       "zapping": {},
       "zero-based-query": {}
     },
-    "name-server": {},
+    "name-server": {
+      "server_address1": {}
+    },
     "ospf": {
       "admin-state": {},
       "area": {
         "default-metric": {},
-        "range": {}
+        "range": {},
+        "area_id": {
+          "default-metric": {
+            "tos": {}
+          },
+          "range": {}
+        }
       },
       "asbr": {},
       "bfd-state": {
         "all-interfaces": {}
       },
       "default-originate": {},
-      "exit-overflow-interval": {},
-      "extlsdb-limit": {},
-      "host": {},
+      "exit-overflow-interval": {
+        "seconds": {}
+      },
+      "extlsdb-limit": {
+        "limit": {}
+      },
+      "host": {
+        "ip_address": {
+          "tos": {
+            "tos": {}
+          }
+        }
+      },
       "interface": {
         "admin-state": {},
         "area": {},
@@ -1126,10 +1626,53 @@
         "priority": {},
         "retrans-interval": {},
         "transit-delay": {},
-        "type": {}
+        "type": {},
+        "if_name": {
+          "bfd-state": {
+            "all-neighbors": {},
+            "drs-only": {}
+          }
+        },
+        "interface_name": {
+          "priority": {
+            "priority": {
+              "ipv6": {
+                "ospf": {
+                  "interface": {
+                    "interface_name": {
+                      "retrans-interval": {
+                        "interval": {
+                          "ipv6": {
+                            "ospf": {
+                              "interface": {
+                                "interface_name": {
+                                  "transit-delay": {
+                                    "delay": {
+                                      "ipv6": {
+                                        "ospf": {
+                                          "bfd-state": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "mtu-checking": {},
-      "neighbor": {},
+      "neighbor": {
+        "neighbor_id": {}
+      },
       "redist-bgp-internal": {},
       "restart": {
         "initiate": {}
@@ -1142,12 +1685,22 @@
       },
       "restart-interval": {},
       "restart-support": {},
-      "route-tag": {},
+      "route-tag": {
+        "tag": {}
+      },
       "spf-timer": {},
-      "virtual-link": {}
+      "virtual-link": {
+        "area_id": {
+          "router_id": {}
+        }
+      }
     },
     "pim": {
-      "anycast-rp": {},
+      "anycast-rp": {
+        "anycast_rp_address": {
+          "rp_address": {}
+        }
+      },
       "bfd-state": {
         "all-interfaces": {}
       },
@@ -1156,42 +1709,83 @@
         "fast-join": {},
         "ssm-compat": {}
       },
-      "candidate-rp": {},
-      "cbsr": {},
+      "candidate-rp": {
+        "rp_address": {
+          "group-address/prefix_length": {}
+        }
+      },
+      "cbsr": {
+        "ip_address": {}
+      },
       "dense": {
         "admin-state": {},
-        "group": {}
+        "group": {
+          "group_address/prefix_length": {}
+        }
       },
       "df-abort": {},
-      "df-periodic-interval": {},
-      "interface": {
-        "bfd-state": {}
+      "df-periodic-interval": {
+        "seconds": {}
       },
-      "interface-election-notification-period": {},
-      "invalid-joinprune-notification-period": {},
-      "invalid-register-notification-period": {},
+      "interface": {
+        "bfd-state": {},
+        "if_name": {
+          "bfd-state": {}
+        }
+      },
+      "interface-election-notification-period": {
+        "seconds": {}
+      },
+      "invalid-joinprune-notification-period": {
+        "seconds": {}
+      },
+      "invalid-register-notification-period": {
+        "seconds": {}
+      },
       "joinprune-packing": {},
-      "keepalive-period": {},
-      "max-rps": {},
+      "keepalive-period": {
+        "seconds": {}
+      },
+      "max-rps": {
+        "number": {}
+      },
       "mbr": {
         "all-sources": {}
       },
-      "neighbor-loss-notification-period": {},
-      "nonbidir-hello-notification-period": {},
-      "probe-time": {},
+      "neighbor-loss-notification-period": {
+        "seconds": {}
+      },
+      "nonbidir-hello-notification-period": {
+        "seconds": {}
+      },
+      "probe-time": {
+        "seconds": {}
+      },
       "register": {
         "checksum": {}
       },
-      "register-delay": {},
-      "register-mtu": {},
+      "register-delay": {
+        "num": {}
+      },
+      "register-mtu": {
+        "num": {}
+      },
       "register-packing": {},
-      "register-rate-limit": {},
-      "register-suppress-timeout": {},
+      "register-rate-limit": {
+        "pps": {}
+      },
+      "register-suppress-timeout": {
+        "seconds": {}
+      },
       "rp-hash": {
         "admin-state": {}
       },
-      "rp-mapping-notification-period": {},
-      "rp-threshold": {},
+      "rp-mapping-notification-period": {
+        "seconds": {}
+      },
+      "rp-threshold": {
+        "bps": {}
+      },
       "sparse": {
         "admin-state": {},
         "asm-fast-join": {},
@@ -1201,19 +1795,41 @@
         "admin-state": {}
       },
       "ssm": {
-        "group": {}
+        "group": {
+          "group_address/prefix_length": {}
+        }
       },
-      "state-refresh-interval": {},
+      "state-refresh-interval": {
+        "seconds": {}
+      },
       "state-refresh-limit": {},
       "state-refresh-ttl": {},
-      "static-rp": {}
+      "static-rp": {
+        "group_address/prefix_length": {
+          "rp_address": {}
+        }
+      },
+      "state-refresh-": {
+        "limit": {
+          "ticks": {}
+        },
+        "ttl": {
+          "num": {}
+        }
+      }
     },
     "redist": {},
     "rip": {
       "admin-state": {},
-      "force-holddowntimer": {},
-      "garbage-timer": {},
-      "holddown-timer": {},
+      "force-holddowntimer": {
+        "seconds": {}
+      },
+      "garbage-timer": {
+        "seconds": {}
+      },
+      "holddown-timer": {
+        "seconds": {}
+      },
       "host-route": {},
       "interface": {
         "admin-state": {},
@@ -1225,9 +1841,15 @@
         "recv-version": {},
         "send-version": {}
       },
-      "invalid-timer": {},
-      "route-tag": {},
-      "update-interval": {}
+      "invalid-timer": {
+        "seconds": {}
+      },
+      "route-tag": {
+        "value": {}
+      },
+      "update-interval": {
+        "seconds": {}
+      }
     },
     "route-map": {
       "action": {},
@@ -1257,12 +1879,17 @@
         "metric-type": {},
         "metric": {},
         "tag": {}
-      }
+      },
+      "route_map_name": {}
     },
     "route-pref": {},
     "router": {
-      "primary-address": {},
-      "router-id": {}
+      "primary-address": {
+        "ip_address": {}
+      },
+      "router-id": {
+        "ip_address": {}
+      }
     },
     "service": {
       "port": {},
@@ -1284,7 +1911,29 @@
           "timeout": {}
         },
         "probe": {},
-        "wait-to-restore": {}
+        "wait-to-restore": {},
+        "cluster_name": {
+          "admin-state": {},
+          "hashing": {},
+          "ping": {
+            "period": {
+              "seconds": {}
+            },
+            "retries": {
+              "count": {}
+            },
+            "timeout": {
+              "milliseconds": {}
+            }
+          },
+          "probe": {
+            "probe_name": {}
+          },
+          "wait-to-restore": {
+            "num": {}
+          }
+        },
+        "name": {}
       },
       "probe": {
         "expect": {},
@@ -1296,7 +1945,8 @@
         "status": {},
         "timeout": {},
         "url": {},
-        "username": {}
+        "username": {},
+        "probe_name": {}
       },
       "reset": {
         "statistics": {}
@@ -1305,6 +1955,15 @@
         "ip": {
           "cluster": {
             "probe": {}
+          },
+          "ip_address": {
+            "cluster": {
+              "cluster_name": {
+                "probe": {
+                  "probe_name": {}
+                }
+              }
+            }
           }
         }
       }
@@ -1313,23 +1972,66 @@
       "all": {
         "bfd-state": {}
       },
-      "bfd-state": {}
+      "bfd-state": {},
+      "ip_address": {},
+      "ipv4_prefix/pfx_length": {
+        "gateway": {
+          "ipv4_host_address": {
+            "bfd-state": {}
+          }
+        }
+      }
     },
     "tcp": {
-      "half-open-timeout": {},
-      "time-stamp-response": {}
+      "half-open-timeout": {
+        "timeout_value": {}
+      },
+      "time-stamp-response": {
+        "admin-state": {}
+      }
     },
     "udp": {
       "relay": {
         "address": {},
         "no": {
-          "statistics": {}
+          "statistics": {
+            "ipv6": {
+              "udp": {
+                "relay": {
+                  "port": {
+                    "port_num": {}
+                  }
+                }
+              }
+            }
+          },
+          "port": {
+            "port_num": {}
+          },
+          "service": {}
         },
-        "port": {},
+        "port": {
+          "port_num": {}
+        },
         "service": {},
         "svc": {},
         "vlan": {}
       }
+    },
+    "phone": {
+      "traffic": {
+        "38-16": {}
+      }
+    },
+    "vrrp": {
+      "bfd-state": {},
+      "delay": {
+        "seconds": {}
+      },
+      "track": {
+        "track_id": {}
+      },
+      "version": {}
     }
   },
   "ipmvlan": {
@@ -1340,11 +2042,20 @@
   },
   "ipsec": {
     "default-discard": {},
-    "key": {},
-    "policy": {
-      "rule": {}
+    "key": {
+      "name": {}
     },
-    "sa": {},
+    "policy": {
+      "rule": {},
+      "name": {
+        "rule": {
+          "index": {}
+        }
+      }
+    },
+    "sa": {
+      "name": {}
+    },
     "security-key": {}
   },
   "ipv6": {
@@ -1664,12 +2375,26 @@
   },
   "kerberos": {
     "authentication-pass": {
-      "domain": {},
-      "policy-list-name": {}
+      "domain": {
+        "domain_name": {
+          "policy-list-name": {
+            "policy_list": {}
+          }
+        }
+      },
+      "policy-list-name": {
+        "policy_list": {}
+      }
     },
-    "inactivity-timer": {},
-    "ip-address": {},
-    "server-timeout": {}
+    "inactivity-timer": {
+      "num": {}
+    },
+    "ip-address": {
+      "ip_address": {}
+    },
+    "server-timeout": {
+      "seconds": {}
+    }
   },
   "kill": {},
   "lanpower": {
@@ -1686,11 +2411,16 @@
     "ni-priority": {},
     "port": {
       "admin-state": {},
-      "reset": {}
+      "reset": {},
+      "chassis/slot/port": {
+        "admin-state": {}
+      }
     },
     "power-over-hdmi": {},
     "power-policy": {},
-    "power-rule": {},
+    "power-rule": {
+      "rule-name": {}
+    },
     "ppoe": {},
     "priority-disconnect": {},
     "priority": {},
@@ -1699,7 +2429,12 @@
     "trust": {},
     "type": {},
     "update-from": {},
-    "usage-threshold": {}
+    "usage-threshold": {},
+    "slot": {
+      "chassis/slot": {
+        "delayed-start": {}
+      }
+    }
   },
   "license": {
     "apply": {
@@ -1740,7 +2475,19 @@
           "timer": {}
         },
         "size": {},
-        "wait-to-restore-time": {}
+        "wait-to-restore-time": {},
+        "agg_id": {
+          "name": {
+            "name": {}
+          }
+        },
+        "agg_num-agg_num/agg_num": {
+          "pre-empt": {
+            "timer": {
+              "seconds": {}
+            }
+          }
+        }
       },
       "port": {
         "actor": {
@@ -1761,7 +2508,8 @@
           "admin-key": {},
           "admin-port": {}
         },
-        "standby": {}
+        "standby": {},
+        "chassis/slot/port": {}
       }
     },
     "static": {
@@ -1772,12 +2520,19 @@
         },
         "name": {},
         "size": {},
-        "wait-to-restore-time": {}
+        "wait-to-restore-time": {},
+        "agg_id": {}
       },
       "port": {
-        "agg": {}
+        "agg": {},
+        "chassis/slot/port": {}
       }
-    }
+    },
+    "agg_id": {
+      "}": {}
+    },
+    "agg_id]": {},
+    "agg_id}": {}
   },
   "lldp": {
     "chassis-mac-delimiter": {},
@@ -1788,18 +2543,33 @@
     "nearest-edge": {
       "mode": {}
     },
-    "network-policy": {},
+    "network-policy": {
+      "policy_id": {
+        "application": {}
+      }
+    },
     "notification": {
-      "interval": {}
+      "interval": {
+        "seconds": {}
+      }
     },
     "port": {
-      "med-device": {}
+      "med-device": {},
+      "chassis/slot/port": {
+        "med-device": {
+          "port-id": {
+            "sub-type": {}
+          }
+        }
+      }
     },
     "port-id": {
       "sub-type": {}
     },
     "reinit": {
-      "delay": {}
+      "delay": {
+        "seconds": {}
+      }
     },
     "tlv": {
       "application": {
@@ -1812,8 +2582,12 @@
       "proprietary": {}
     },
     "transmit": {
-      "hold-multiplier": {},
-      "interval": {}
+      "hold-multiplier": {
+        "num": {}
+      },
+      "interval": {
+        "seconds": {}
+      }
     },
     "trust-agent": {
       "violation-action": {}
@@ -1928,10 +2702,16 @@
   "mvrp": {
     "applicant": {},
     "clear-statistics": {},
-    "linkagg": {},
-    "maximum-vlan": {},
+    "linkagg": {
+      "agg_id": {}
+    },
+    "maximum-vlan": {
+      "vlan_limit": {}
+    },
     "periodic-transmission": {},
-    "port": {},
+    "port": {
+      "chassis/slot/port": {}
+    },
     "registration": {},
     "restrict-vlan-advertisement": {},
     "restrict-vlan-registration": {},
@@ -1946,7 +2726,8 @@
   "naas": {
     "license": {
       "apply": {
-        "file": {}
+        "file": {},
+        "file_name": {}
       },
       "call-home": {
         "interval": {}
@@ -1957,27 +2738,1604 @@
   "no": {
     "aaa": {
       "certificate": {
-        "update-supplicant-certificate": {}
+        "update-supplicant-certificate": {},
+        "install-certificate": {
+          "webview": {
+            "<web-certificate>": {}
+          }
+        },
+        "update-supplicant-ca-cert": {
+          "<ca-certificate>": {}
+        }
+      },
+      "authentication": {},
+      "ldap-server": {
+        "server_name": {}
+      },
+      "profile": {
+        "profile_name": {}
+      },
+      "radius-server": {
+        "server_name": {
+          "health-check": {}
+        }
+      },
+      "switch-access": {
+        "management-stations": {
+          "ip_address": {}
+        }
+      },
+      "tacacs+-server": {
+        "server": {}
       }
     },
     "ip": {
       "helper": {
-        "statistics": {}
+        "statistics": {},
+        "address": {},
+        "vlan": {
+          "vlan_id": {}
+        }
+      },
+      "access-list": {
+        "access_list_name": {
+          "address": {
+            "address/prefixLen": {}
+          }
+        }
+      },
+      "anycast-gateway-mac": {},
+      "bgp": {
+        "address-family": {
+          "evpn": {},
+          "l2vpn-vpls": {}
+        },
+        "aggregate-address": {
+          "ip_address": {
+            "ip_mask": {
+              "as-set": {},
+              "metric": {
+                "value": {}
+              },
+              "summary-only": {}
+            }
+          }
+        },
+        "always-compare-med": {},
+        "as-origin-interval": {},
+        "bestpath": {
+          "as-path": {
+            "ignore": {}
+          },
+          "med": {
+            "missing-as-worst": {}
+          }
+        },
+        "client-to-client": {
+          "reflection": {}
+        },
+        "confederation": {
+          "neighbor": {
+            "ip_address": {}
+          },
+          "neighbor6": {
+            "ipv6_address": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "in-aspathlist": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dampening": {},
+        "evpn-fabric-autonomous-system": {},
+        "fast-external-failover": {},
+        "graceful-restart": {},
+        "log-neighbor-changes": {},
+        "maximum-paths": {},
+        "nbr-template": {
+          "template-name": {}
+        },
+        "neighbor": {
+          "ip_address": {
+            "activate": {
+              "l2vpn-vpls": {}
+            },
+            "activate-evpn": {},
+            "activate-ipv6": {},
+            "default-originate": {},
+            "ebgp-multihop": {},
+            "evpn-nbr-type-fabric": {},
+            "nbr-template": {
+              "template-name": {}
+            },
+            "next-hop-self": {},
+            "passive": {},
+            "remove-private-as": {},
+            "route-map": {},
+            "route-reflector-client": {},
+            "soft-reconfiguration": {}
+          }
+        },
+        "network": {
+          "ip_address": {
+            "ip_mask": {
+              "metric": {
+                "value": {}
+              }
+            }
+          }
+        },
+        "policy": {
+          "aspath-list": {
+            "name": {
+              "\u201cregular_expression\u201d": {}
+            }
+          },
+          "community-list": {
+            "name": {}
+          },
+          "prefix-list": {
+            "name": {
+              "ip_address": {
+                "ip_mask": {}
+              }
+            }
+          },
+          "prefix6-list": {
+            "pfx_list_name": {
+              "prefix6/pfx_length": {}
+            }
+          }
+        },
+        "synchronization": {},
+        "unicast": {}
+      },
+      "dhcp": {
+        "relay": {
+          "destination": {
+            "ip_address": {}
+          },
+          "insert-agent-information": {},
+          "interface": {
+            "if_name": {
+              "destination": {
+                "ip_address": {}
+              }
+            }
+          },
+          "per-interface-mode": {}
+        }
+      },
+      "domain-lookup": {},
+      "domain-name": {},
+      "dos": {
+        "arp-poison": {
+          "restricted-address": {
+            "ip_address": {}
+          }
+        }
+      },
+      "dvmrp": {
+        "interface": {}
+      },
+      "interface": {
+        "dhcp-client": {},
+        "if_name": {
+          "anycast-gateway-address": {
+            "ip_address": {}
+          }
+        }
+      },
+      "isis": {
+        "area-id": {
+          "area": {
+            "address": {}
+          }
+        },
+        "csnp-auth": {},
+        "graceful-restart": {},
+        "hello-auth": {},
+        "level": {},
+        "lsp-lifetime": {},
+        "lsp-wait": {},
+        "multi-topology": {
+          "BGP": {
+            "Commands": {}
+          }
+        },
+        "overload": {},
+        "overload-on-boot": {},
+        "psnp-auth": {},
+        "spf-wait": {},
+        "summary-address": {},
+        "summary-address6": {},
+        "vlan": {
+          "vlan_id": {
+            "level": {},
+            "lsp-pacing-interval": {},
+            "passive": {},
+            "retransmit-interval": {}
+          }
+        }
+      },
+      "mroute-boundary": {
+        "if_name": {
+          "scoped_address": {
+            "mask": {}
+          }
+        }
+      },
+      "multicast": {
+        "display-interface-names": {},
+        "host-list": {
+          "host_list_name": {}
+        },
+        "inherit-default-vrf-config": {},
+        "profile": {
+          "profile_name": {}
+        },
+        "static-group": {
+          "address": {
+            "vlan": {
+              "vlan-id": {}
+            }
+          },
+          "ip_address": {
+            "service": {
+              "service_id": {
+                "sap": {}
+              }
+            },
+            "vlan": {
+              "vlan_id": {}
+            }
+          }
+        },
+        "static-neighbor": {
+          "service": {
+            "service_id": {
+              "sap": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        },
+        "static-querier": {
+          "service": {
+            "service_id": {
+              "sap": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        }
+      },
+      "ospf": {
+        "area": {
+          "area_id": {
+            "default-metric": {
+              "tos": {}
+            },
+            "range": {}
+          }
+        },
+        "asbr": {},
+        "default-originate": {},
+        "host": {
+          "ip_address": {
+            "tos": {
+              "tos": {}
+            }
+          }
+        },
+        "interface": {},
+        "mtu-checking": {},
+        "neighbor": {
+          "neighbor_id": {}
+        },
+        "redist-bgp-internal": {},
+        "restart-support": {},
+        "virtual-link": {
+          "area_id": {
+            "router_id": {}
+          }
+        }
+      },
+      "pim": {
+        "anycast-rp": {
+          "anycast_rp_address": {
+            "rp_address": {}
+          }
+        },
+        "candidate-rp": {
+          "rp_address": {
+            "group-address/prefix_length": {}
+          }
+        },
+        "cbsr": {
+          "ip_address": {}
+        },
+        "dense": {
+          "group": {
+            "group_address/prefix_length": {}
+          }
+        },
+        "mbr": {
+          "all-sources": {}
+        },
+        "ssm": {
+          "group": {
+            "group_address/prefix_length": {}
+          }
+        },
+        "static-rp": {
+          "group_address/prefix_length": {
+            "rp_address": {}
+          }
+        }
+      },
+      "redist": {},
+      "rip": {
+        "host-route": {},
+        "interface": {}
+      },
+      "route-map": {
+        "route_map_name": {}
+      },
+      "slb": {
+        "cluster": {
+          "name": {}
+        },
+        "probe": {
+          "probe_name": {}
+        },
+        "server": {
+          "ip": {
+            "ip_address": {
+              "cluster": {
+                "cluster_name": {}
+              }
+            }
+          }
+        }
+      },
+      "static-route": {
+        "ip_address": {}
+      },
+      "vrrp": {
+        "track": {
+          "track_id": {}
+        }
+      }
+    },
+    "arp": {
+      "filter": {
+        "ip_address": {}
+      },
+      "ip_address": {}
+    },
+    "dhcp": {
+      "relay": {
+        "pxe-support": {}
+      }
+    },
+    "ethernet-service": {
+      "custom-L2-protocol": {
+        "name": {
+          "ethernet-service": {
+            "uni-profile": {
+              "uni_profile_name": {
+                "custom-L2-protocol": {
+                  "custom_protocol_name": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "nni": {},
+      "sap": {
+        "sap_id": {
+          "cvlan": {},
+          "ethernet-service": {
+            "sap": {
+              "sap_id": {
+                "uni": {}
+              }
+            },
+            "uni-profile": {}
+          },
+          "uni": {}
+        }
+      },
+      "sap-profile": {
+        "sap_profile_name": {
+          "ethernet-service": {
+            "sap": {
+              "sap_id": {
+                "sap-profile": {
+                  "sap_profile_name": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "service-name": {
+        "service_name": {
+          "svlan": {
+            "svlan_id": {
+              "ethernet-service": {
+                "nni": {}
+              }
+            }
+          }
+        }
+      },
+      "svlan": {},
+      "uni-profile": {
+        "uni_profile_name": {
+          "custom-L2-protocol": {
+            "custom_protocol_name": {
+              "ethernet-service": {
+                "mac-tunneling": {}
+              }
+            }
+          },
+          "ethernet-service": {
+            "uni": {},
+            "uni-profile": {
+              "uni_profile_name": {
+                "inbound": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "interfaces": {
+      "port": {
+        "chassis/slot/port": {
+          "macsec": {
+            "clear-tag-mode": {},
+            "confidentiality-offset": {},
+            "control-protocol-bypass-profile": {
+              "profile-name": {}
+            },
+            "mka-profile": {},
+            "replay-protection-window": {}
+          }
+        }
+      }
+    },
+    "ipsec": {
+      "key": {
+        "name": {}
+      },
+      "policy": {
+        "name": {}
+      },
+      "sa": {
+        "name": {}
+      }
+    },
+    "ipv6": {
+      "access-list": {
+        "access_list_name": {
+          "address": {
+            "address/prefixLen": {}
+          },
+          "ipv6": {
+            "access-list": {
+              "access_list_name": {
+                "address": {
+                  "address/prefixLen": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "address": {
+        "ipv6_address": {},
+        "ipv6_prefix": {
+          "eui-64": {}
+        },
+        "local-unicast": {}
+      },
+      "bgp": {
+        "aggregate-address": {
+          "ipv6_address": {
+            "prefix_length": {
+              "as-set": {
+                "ipv6": {
+                  "bgp": {
+                    "aggregate-address": {
+                      "ipv6_address": {
+                        "prefix_length": {
+                          "community": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ipv6": {
+                "bgp": {
+                  "aggregate-address": {
+                    "ipv6_address": {
+                      "prefix_length": {
+                        "admin-state": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "metric": {
+                "value": {
+                  "ipv6": {
+                    "bgp": {
+                      "aggregate-address": {
+                        "ipv6_address": {
+                          "prefix_length": {
+                            "summary-only": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "summary-only": {}
+            }
+          }
+        },
+        "neighbor": {
+          "ipv6_address": {
+            "ebgp-multihop": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "update-source-address": {
+                        "ipv6_address": {}
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "ipv6": {
+              "bgp": {
+                "neighbor": {
+                  "ipv6_address": {
+                    "ttl-security": {
+                      "num": {
+                        "ipv6": {
+                          "bgp": {
+                            "neighbor": {
+                              "ipv6_address": {
+                                "no": {
+                                  "ttl-security": {
+                                    "ipv6": {
+                                      "bgp": {
+                                        "neighbor": {
+                                          "ipv6_address": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "passive": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "remove-private-as": {}
+                    }
+                  }
+                }
+              }
+            },
+            "remove-private-as": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "soft-reconfiguration": {}
+                    }
+                  }
+                }
+              }
+            },
+            "route-map": {},
+            "route-reflector-client": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "md5": {
+                        "key": {}
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "soft-reconfiguration": {
+              "ipv6": {
+                "bgp": {
+                  "neighbor": {
+                    "ipv6_address": {
+                      "stats-clear": {}
+                    }
+                  }
+                }
+              }
+            },
+            "update-source-address": {
+              "ipv6_address": {
+                "ipv6": {
+                  "bgp": {
+                    "neighbor": {
+                      "ipv6_address": {
+                        "passive": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "network": {
+          "ipv6_address/prefix_length": {
+            "ipv6": {
+              "bgp": {
+                "network": {
+                  "ipv6_address/prefix_length": {}
+                }
+              }
+            }
+          }
+        },
+        "unicast": {
+          "ipv6": {
+            "bgp": {
+              "aggregate-address": {
+                "ipv6_address": {
+                  "prefix_length": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "dhcp": {
+        "guard": {
+          "service": {},
+          "vlan": {
+            "vlan_id": {
+              "trusted": {}
+            }
+          }
+        },
+        "relay": {
+          "if_name": {
+            "destination": {
+              "ip6_address": {
+                "scope_if_name": {
+                  "ipv6": {
+                    "dhcp": {
+                      "relay": {
+                        "maximum-hops": {
+                          "hops": {
+                            "ipv6": {
+                              "dhcp": {
+                                "relay": {
+                                  "interface-id": {
+                                    "prefix": {
+                                      "prefix_name": {}
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "interface-id": {
+            "prefix": {
+              "prefix_name": {
+                "ipv6": {
+                  "dhcp": {
+                    "relay": {
+                      "remote-id": {
+                        "format": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "echo": {},
+      "hop-limit": {
+        "ipv6": {
+          "pmtu-lifetime": {
+            "time": {
+              "ipv6": {
+                "neighbor": {
+                  "stale-lifetime": {
+                    "stale-lifetime": {
+                      "ipv6": {
+                        "neighbor": {
+                          "ipv6_address": {
+                            "hardware_address": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "icmp": {
+        "rate-limit": {
+          "ping6": {}
+        }
+      },
+      "interface": {
+        "if_name": {
+          "ipv6": {
+            "interface": {
+              "if_name": {
+                "rtr-port": {}
+              }
+            }
+          }
+        }
+      },
+      "multicast": {
+        "display-interface-names": {
+          "ipv6": {
+            "multicast": {
+              "inherit-default-vrf-config": {}
+            }
+          }
+        },
+        "host-list": {
+          "host_list_name": {}
+        },
+        "inherit-default-vrf-config": {
+          "ipv6": {
+            "multicast": {
+              "profile": {
+                "profile_name": {}
+              }
+            }
+          }
+        },
+        "profile": {
+          "profile_name": {}
+        },
+        "ssm-map": {
+          "group_address": {}
+        },
+        "static-group": {
+          "ipv6_address": {
+            "service": {
+              "service_id": {
+                "sap": {}
+              }
+            },
+            "vlan": {
+              "vlan_id": {}
+            }
+          }
+        },
+        "static-neighbor": {
+          "service": {
+            "service_id": {
+              "sap": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        },
+        "static-querier": {
+          "service": {
+            "service_id": {
+              "sap": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        }
+      },
+      "neighbor": {
+        "ipv6_address": {},
+        "limit": {
+          "ipv6": {
+            "neighbor": {
+              "vrf-limit": {
+                "count": {}
+              }
+            }
+          }
+        },
+        "vrf-limit": {}
+      },
+      "ospf": {
+        "area": {
+          "area_id": {
+            "ipv6": {
+              "ospf": {
+                "area": {
+                  "area_id": {}
+                }
+              }
+            }
+          }
+        },
+        "default-originate": {
+          "ipv6": {
+            "ospf": {
+              "area": {
+                "area_id": {}
+              }
+            }
+          }
+        },
+        "host": {
+          "ipv6_address": {
+            "area": {
+              "area_id": {
+                "ipv6": {
+                  "ospf": {
+                    "mtu-checking": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "interface": {
+          "interface_name": {
+            "ipv6": {
+              "ospf": {
+                "interface": {
+                  "interface_name": {
+                    "admin-state": {},
+                    "suppress-link-lsa": {}
+                  }
+                }
+              }
+            },
+            "suppress-link-lsa": {
+              "ipv6": {
+                "ospf": {
+                  "interface": {
+                    "interface_name": {
+                      "type": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "mtu-checking": {
+          "ipv6": {
+            "ospf": {
+              "route-tag": {
+                "tag": {
+                  "ipv6": {
+                    "ospf": {
+                      "spf-timer": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "neighbor": {
+          "nbr_ipv6_address": {
+            "ipv6": {
+              "ospf": {
+                "interface": {
+                  "interface_name": {
+                    "area": {
+                      "area_id": {
+                        "ipv6": {
+                          "ospf": {
+                            "interface": {
+                              "interface_name": {
+                                "dead-interval": {
+                                  "seconds": {
+                                    "ipv6": {
+                                      "ospf": {
+                                        "interface": {
+                                          "interface_name": {
+                                            "hello-interval": {
+                                              "seconds": {
+                                                "ipv6": {
+                                                  "ospf": {
+                                                    "interface": {
+                                                      "interface_name": {
+                                                        "cost": {
+                                                          "cost": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "virtual-link": {
+          "area": {
+            "area_id": {
+              "router": {
+                "router_id": {
+                  "ipv6": {
+                    "ospf": {
+                      "default-originate": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "pim": {
+        "anycast-rp": {
+          "anycast_rp_address": {
+            "rp_address": {
+              "ipv6": {
+                "pim": {
+                  "candidate-rp": {
+                    "rp_address": {
+                      "group_address/prefix_length": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "candidate-rp": {
+          "rp_address": {
+            "group_address/prefix_length": {
+              "ipv6": {
+                "pim": {
+                  "rp-switchover": {}
+                }
+              }
+            }
+          }
+        },
+        "cbsr": {
+          "ipv6_address": {
+            "ipv6": {
+              "pim": {
+                "static-rp": {
+                  "group_address/prefix_length": {
+                    "rp_address": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dense": {
+          "group": {
+            "group_address/prefix_length": {
+              "ipv6": {
+                "pim": {
+                  "cbsr": {
+                    "ipv6_address": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ssm": {
+          "group": {
+            "group_address/prefix_length": {
+              "ipv6": {
+                "pim": {
+                  "dense": {
+                    "group": {
+                      "group_address/prefix_length": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "static-rp": {
+          "group_address/prefix_length": {
+            "rp_address": {
+              "ipv6": {
+                "pim": {
+                  "anycast-rp": {
+                    "anycast_rp_address": {
+                      "rp_address": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "prefix": {
+        "ipv6_address": {
+          "/prefix_length": {
+            "if_name": {
+              "ipv6": {
+                "static-route": {
+                  "ipv6_prefix/prefix_length": {
+                    "gateway": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ra-dnssl-domain": {
+        "domainname": {
+          "group": {
+            "groupname": {
+              "ipv6": {
+                "ra-rdnss-server": {
+                  "ipv6addr": {
+                    "group": {
+                      "groupname": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ra-dnssl-group": {
+        "groupname": {}
+      },
+      "ra-dnssl-list": {
+        "ipv6": {
+          "ra-rdnss-list": {
+            "groupname": {}
+          }
+        }
+      },
+      "ra-filter": {
+        "if-name": {
+          "ipv6": {
+            "ra-filter": {
+              "if-name": {
+                "trusted": {}
+              }
+            }
+          },
+          "trusted": {}
+        }
+      },
+      "ra-rdnss-group": {
+        "groupname": {}
+      },
+      "ra-rdnss-list": {
+        "ipv6": {
+          "prefix": {
+            "ipv6_address": {
+              "/prefix_length": {
+                "if_name": {}
+              }
+            }
+          }
+        }
+      },
+      "ra-rdnss-server": {
+        "ipv6addr": {
+          "group": {
+            "groupname": {
+              "ipv6": {
+                "ra-dnssl-list": {
+                  "groupname": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "rip": {
+        "interface": {
+          "if_name": {
+            "ipv6": {
+              "rip": {
+                "interface": {
+                  "if_name": {
+                    "metric": {
+                      "value": {
+                        "ipv6": {
+                          "rip": {
+                            "interface": {
+                              "if_name": {
+                                "recv-status": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "static-route": {
+        "ipv6_prefix/prefix_length": {
+          "gateway": {}
+        }
+      }
+    },
+    "kerberos": {
+      "authentication-pass": {
+        "domain": {
+          "domain_name": {}
+        },
+        "policy-list-name": {}
+      },
+      "ip-address": {
+        "ip_address": {}
+      }
+    },
+    "lanpower": {
+      "power-policy": {
+        "name": {}
+      },
+      "power-rule": {
+        "rule-name": {}
+      }
+    },
+    "linkagg": {
+      "lacp": {
+        "agg": {
+          "agg_id": {}
+        },
+        "port": {
+          "chassis/slot/port": {}
+        }
+      },
+      "static": {
+        "agg": {
+          "agg_id": {}
+        },
+        "port": {
+          "chassis/slot/port": {}
+        }
+      }
+    },
+    "lldp": {
+      "network-policy": {
+        "policy_id": {}
+      }
+    },
+    "mac-learning": {
+      "aging-time": {
+        "mac-learning": {
+          "mode": {}
+        }
+      }
+    },
+    "mvrp": {},
+    "ntp": {
+      "broadcast": {},
+      "peer": {},
+      "server": {
+        "ip_address": {}
+      },
+      "src-ip": {
+        "preferred": {}
+      }
+    },
+    "openflow": {
+      "logical-switch": {
+        "<name>": {},
+        "name": {
+          "controller": {},
+          "interfaces": {}
+        }
+      }
+    },
+    "policy": {
+      "condition": {
+        "condition_name": {}
+      },
+      "list": {
+        "list_name": {}
+      },
+      "mac": {
+        "group": {
+          "mac_group": {}
+        }
+      },
+      "map": {
+        "group": {
+          "map_group": {}
+        }
+      },
+      "network": {
+        "group": {
+          "net_group_name": {}
+        }
+      },
+      "port": {
+        "group": {
+          "group_name": {}
+        }
+      },
+      "rule": {
+        "rule_name": {}
+      },
+      "server": {
+        "ip_address": {}
+      },
+      "service": {
+        "group": {
+          "service_group": {}
+        },
+        "service_name": {}
+      },
+      "validity-period": {
+        "name": {}
+      },
+      "vlan": {
+        "group": {
+          "group_name": {}
+        }
+      }
+    },
+    "power": {
+      "slot": {
+        "chassis/slot": {}
+      }
+    },
+    "qos": {
+      "ecnp": {},
+      "qsp": {
+        "dcb": {}
+      }
+    },
+    "sflow": {
+      "agent": {
+        "ip": {
+          "ip_address": {}
+        }
+      },
+      "poller": {
+        "num": {
+          "port": {}
+        }
+      },
+      "sampler": {
+        "num": {
+          "port": {}
+        }
+      }
+    },
+    "snmp": {
+      "community-map": {
+        "community_string": {}
+      },
+      "station": {}
+    },
+    "spb": {
+      "bvlan": {
+        "bvlan_id": {}
+      },
+      "ipvpn": {
+        "bind": {
+          "vrf": {}
+        },
+        "redist": {}
+      },
+      "ipvpn6": {
+        "bind": {
+          "vrf": {}
+        },
+        "redist": {}
+      },
+      "isis": {
+        "graceful-restart": {},
+        "interface": {},
+        "overload": {},
+        "overload-on-boot": {}
+      }
+    },
+    "udld": {},
+    "unp": {
+      "802.1x-pass-through": {},
+      "ap-mode": {
+        "mac-oui": {}
+      },
+      "auth-server": {
+        "down": {
+          "port-bounce": {}
+        }
+      },
+      "auth-server-down": {},
+      "auth-server-down-timeout": {},
+      "classification": {
+        "authentication-type": {},
+        "domain": {
+          "domain_id": {}
+        },
+        "ip-address": {
+          "ip_address": {
+            "mask": {
+              "subnet_mask": {}
+            }
+          }
+        },
+        "lldp": {
+          "med-endpoint": {}
+        },
+        "mac-address": {
+          "mac_address": {}
+        },
+        "mac-oui": {
+          "mac_oui": {}
+        },
+        "mac-range": {
+          "low_mac_address": {
+            "high_mac_address": {}
+          }
+        },
+        "vlan-tag": {
+          "vlan_id": {}
+        }
+      },
+      "classification-rule": {
+        "rule_name": {
+          "authentication-type": {},
+          "device-type": {},
+          "domain": {},
+          "ip-address": {},
+          "lldp": {
+            "med-endpoint": {
+              "ip-phone": {}
+            }
+          },
+          "mac-address": {},
+          "mac-oui": {},
+          "mac-range": {}
+        },
+        "vlan-tag": {}
+      },
+      "domain": {
+        "domain_id": {
+          "description": {
+            "domain_description": {}
+          }
+        }
+      },
+      "dynamic-profile-configuration": {},
+      "dynamic-vlan-configuration": {},
+      "ipv6-drop": {},
+      "l2gre": {
+        "far-end-ip-list": {
+          "ip_list_name": {}
+        }
+      },
+      "mac-mobility": {},
+      "multi-untag-sap": {},
+      "network-group": {
+        "net_group_name": {}
+      },
+      "policy": {
+        "validity-location": {
+          "policy_name": {}
+        },
+        "validity-period": {
+          "policy_name": {}
+        }
+      },
+      "port-template": {
+        "template_name": {}
+      },
+      "profile": {
+        "profile_name": {
+          "authentication-flag": {},
+          "captive-portal-authentication": {},
+          "captive-portal-profile": {},
+          "kerberos-authentication": {},
+          "location-policy": {},
+          "mac-mobility": {},
+          "map": {
+            "service-type": {
+              "l2gre": {},
+              "spb": {},
+              "vpls": {
+                "tag-value": {}
+              },
+              "vxlan": {}
+            }
+          },
+          "maximum-egress-bandwidth": {},
+          "maximum-egress-depth": {},
+          "maximum-ingress-bandwidth": {},
+          "maximum-ingress-depth": {},
+          "mobile-tag": {},
+          "period-policy": {},
+          "qos-policy-list": {},
+          "saa-profile": {},
+          "trust-tagged-vlans": {}
+        }
+      },
+      "redirect": {
+        "allowed-auth-server": {
+          "name": {}
+        },
+        "allowed-name": {
+          "name": {}
+        },
+        "server": {}
+      },
+      "rediret": {
+        "proxy-server-port": {}
+      },
+      "restricted-role": {},
+      "router-auth": {
+        "cp-profile": {
+          "cp_profile_name": {}
+        },
+        "user-group": {
+          "user_group_name": {}
+        }
+      },
+      "saa-profile": {
+        "profile_name": {}
+      },
+      "user-role": {
+        "role_name": {
+          "authentication-type": {},
+          "cp-status-post-login": {},
+          "policy-list": {}
+        }
+      },
+      "vpls": {
+        "far-end-ip-list": {
+          "ip_list_name": {}
+        }
+      },
+      "vxlan": {
+        "far-end-ip-list": {
+          "ip_list_name": {}
+        }
+      }
+    },
+    "user": {
+      "username": {}
+    },
+    "vlan": {
+      "vlan_id": {}
+    },
+    "vm-snooping": {
+      "static-policy": {
+        "rule": {
+          "rule_name": {}
+        }
+      },
+      "vxlan": {
+        "udp-port": {}
+      }
+    },
+    "vrf": {
+      "vrf_name": {}
+    },
+    "zeroconf": {
+      "access-vlan-list": {
+        "vlan_id1...vlan_idn": {}
+      },
+      "client-policy": {
+        "policy_name": {}
+      },
+      "edge-ip-list": {
+        "ip_address1...ip_addressn": {}
+      },
+      "gateway-vlan-list": {
+        "vlan_id1...vlan_idn": {}
+      },
+      "responder-ip": {
+        "ip_address": {}
+      },
+      "server-policy": {
+        "policy_name": {}
+      },
+      "service-rule": {
+        "rule_name": {}
       }
     }
   },
   "ntp": {
     "authenticate": {},
     "broadcast-client": {},
-    "broadcast-delay": {},
+    "broadcast-delay": {
+      "microseconds": {}
+    },
     "broadcast": {},
-    "client": {},
+    "client": {
+      "admin-state": {}
+    },
     "interface": {},
     "key": {
-      "load": {}
+      "load": {},
+      "key": {}
     },
-    "master": {},
-    "max-associations": {},
+    "master": {
+      "stratum_number": {}
+    },
+    "max-associations": {
+      "number": {}
+    },
     "peer": {},
     "server": {
       "synchronized": {},
@@ -1986,21 +4344,33 @@
     "src-ip": {
       "preferred": {}
     },
-    "vrf-name": {}
+    "vrf-name": {
+      "name": {}
+    }
   },
   "numerics": {},
   "onie": {
     "authentication": {}
   },
   "openflow": {
-    "back-off-max": {},
-    "idle-probe-timeout": {},
+    "back-off-max": {
+      "seconds": {}
+    },
+    "idle-probe-timeout": {
+      "seconds": {}
+    },
     "logical-switch": {
       "controller": {},
-      "interfaces": {}
+      "interfaces": {},
+      "name": {
+        "controller": {},
+        "interfaces": {}
+      }
     }
   },
-  "password": {},
+  "password": {
+    "password": {}
+  },
   "paste": {},
   "ping": {},
   "ping6": {},
@@ -2034,7 +4404,87 @@
         "port": {}
       },
       "shared": {},
-      "tos": {}
+      "tos": {},
+      "action_name": {
+        "802.1p": {
+          "802.1p_value": {}
+        },
+        "cir": {
+          "bps": {}
+        },
+        "cpu": {
+          "priority": {
+            "priority": {}
+          }
+        },
+        "disposition": {},
+        "dscp": {
+          "dscp_value": {}
+        },
+        "maximum": {
+          "bandwidth": {
+            "bps": {}
+          },
+          "depth": {
+            "bytes": {}
+          }
+        },
+        "no": {
+          "802.1p": {},
+          "cir": {},
+          "cpu": {
+            "priority": {}
+          },
+          "dscp": {},
+          "maximum": {
+            "bandwidth": {},
+            "depth": {}
+          },
+          "mirror": {},
+          "no-cache": {},
+          "permanent": {
+            "gateway-ip": {},
+            "gateway-ipv6": {}
+          },
+          "pir": {},
+          "port-disable": {},
+          "priority": {},
+          "redirect": {
+            "linkagg": {},
+            "port": {}
+          },
+          "shared": {},
+          "tos": {}
+        },
+        "no-cache": {},
+        "permanent": {
+          "gateway-ip": {
+            "ip_address": {}
+          },
+          "gateway-ipv6": {
+            "ipv6_address": {}
+          }
+        },
+        "port-disable": {},
+        "priority": {
+          "priority_value": {}
+        },
+        "redirect": {
+          "linkagg": {
+            "agg_id": {}
+          },
+          "port": {
+            "chassis/slot/port": {}
+          }
+        },
+        "shared": {},
+        "tos": {
+          "tos_value": {}
+        }
+      },
+      "no": {
+        "map": {}
+      }
     },
     "condition": {
       "8021p": {},
@@ -2115,43 +4565,377 @@
           }
         },
         "vxlan-port": {}
+      },
+      "condition_name": {
+        "802.1p": {
+          "802.1p_value": {}
+        },
+        "app-mon-application-group": {
+          "group_name": {}
+        },
+        "app-mon-application-name": {
+          "app_name": {}
+        },
+        "appfp-group": {
+          "group_name": {}
+        },
+        "destination": {
+          "ip": {
+            "ip_address": {}
+          },
+          "ip-port": {
+            "port": {}
+          },
+          "ipv6": {},
+          "mac": {
+            "group": {
+              "mac_group": {}
+            },
+            "mac_address": {}
+          },
+          "network": {
+            "group": {
+              "network_group": {}
+            }
+          },
+          "port": {
+            "group": {
+              "group_name": {}
+            }
+          },
+          "tcp-port": {
+            "port": {}
+          },
+          "udp-port": {
+            "port": {}
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        },
+        "dscp": {},
+        "established": {},
+        "ethertype": {
+          "etype": {}
+        },
+        "flow-label": {
+          "flow_label_value": {}
+        },
+        "fragments": {},
+        "icmpcode": {
+          "code": {}
+        },
+        "icmptype": {
+          "type": {}
+        },
+        "inner": {
+          "802.1p": {
+            "802.1p_value": {}
+          },
+          "source-vlan": {
+            "vlan_id": {}
+          }
+        },
+        "ip-protocol": {
+          "protocol": {}
+        },
+        "ipv6": {},
+        "multicast": {
+          "ip": {
+            "ip_address": {}
+          },
+          "network": {
+            "group": {
+              "multicast_group": {}
+            }
+          }
+        },
+        "no": {
+          "802.1p": {},
+          "app-mon-application-group": {},
+          "app-mon-application-name": {},
+          "appfp-group": {},
+          "destination": {
+            "ip": {},
+            "ip-port": {},
+            "ipv6": {},
+            "mac": {},
+            "network": {
+              "group": {}
+            },
+            "port": {},
+            "tcp-port": {},
+            "udp-port": {},
+            "vlan": {}
+          },
+          "dscp": {},
+          "established": {},
+          "ethertype": {},
+          "flow-label": {},
+          "fragments": {},
+          "icmpcode": {},
+          "icmptype": {},
+          "inner": {
+            "802.1p": {},
+            "source-vlan": {}
+          },
+          "ip-protocol": {},
+          "ipv6": {},
+          "multicast": {
+            "ip": {},
+            "network": {
+              "group": {}
+            }
+          },
+          "service": {
+            "group": {}
+          },
+          "source": {
+            "ip": {},
+            "ip-port": {},
+            "ipv6": {},
+            "mac": {
+              "group": {}
+            },
+            "network": {
+              "group": {}
+            },
+            "port": {
+              "group": {}
+            },
+            "service-id": {},
+            "tcp-port": {},
+            "udp-port": {},
+            "vlan": {
+              "group": {}
+            }
+          },
+          "tcpflags": {},
+          "tos": {},
+          "vrf": {}
+        },
+        "service": {
+          "group": {
+            "service_group": {}
+          },
+          "service_name": {}
+        },
+        "source": {
+          "ip": {},
+          "ip-port": {
+            "port": {}
+          },
+          "ipv6": {},
+          "mac": {
+            "group": {
+              "group_name": {}
+            },
+            "mac_address": {}
+          },
+          "network": {
+            "group": {
+              "network_group": {}
+            }
+          },
+          "port": {
+            "group": {
+              "group_name": {}
+            }
+          },
+          "service-id": {
+            "service_id": {}
+          },
+          "tcp-port": {
+            "port": {}
+          },
+          "udp-port": {
+            "port": {}
+          },
+          "vlan": {
+            "group": {
+              "vlan_group": {}
+            },
+            "vlan_id": {}
+          }
+        },
+        "tcpflags": {},
+        "tos": {
+          "tos_value": {}
+        },
+        "vrf": {},
+        "vxlan": {
+          "inner": {
+            "ip-protocol": {
+              "protocol": {}
+            },
+            "l4-port": {},
+            "source": {
+              "ip": {
+                "ip_address": {}
+              },
+              "ipv6": {
+                "ipv6_address": {}
+              },
+              "mac": {
+                "mac_address": {}
+              },
+              "mac-group": {
+                "group_name": {}
+              }
+            }
+          },
+          "no": {
+            "ip-protocol": {},
+            "l4-port": {},
+            "source": {
+              "ip": {},
+              "ipv6": {},
+              "mac": {},
+              "mac-group": {}
+            },
+            "vxlan-port": {}
+          },
+          "vni": {
+            "vxlan_id": {}
+          },
+          "vxlan-port": {
+            "udp_port": {}
+          }
+        }
       }
     },
     "list": {
-      "rules": {}
+      "rules": {},
+      "list_name": {
+        "no": {
+          "rules": {
+            "rule_name": {}
+          }
+        },
+        "rules": {
+          "rule_name": {}
+        },
+        "type": {}
+      }
     },
     "mac": {
-      "group": {}
+      "group": {
+        "mac_group": {
+          "mac_address": {},
+          "no": {
+            "mac_address": {}
+          }
+        }
+      }
     },
     "map": {
-      "group": {}
+      "group": {
+        "map_group": {},
+        "no": {}
+      }
     },
     "network": {
-      "group": {}
+      "group": {
+        "net_group_name": {
+          "ipv4_address": {},
+          "ipv6_address": {},
+          "no": {
+            "ipv4_address": {},
+            "ipv6_address": {}
+          }
+        }
+      }
     },
     "port": {
-      "group": {}
+      "group": {
+        "group_name": {
+          "no": {}
+        }
+      }
     },
-    "rule": {},
+    "rule": {
+      "rule_name": {
+        "no": {}
+      }
+    },
     "server": {
       "flush": {},
-      "load": {}
+      "load": {},
+      "ip_address": {}
     },
     "service": {
       "destination": {
         "tcp-port": {},
         "udp-port": {}
       },
-      "group": {},
+      "group": {
+        "service_group": {
+          "no": {
+            "service_name1": {}
+          },
+          "service_name1": {}
+        }
+      },
       "protocol": {},
       "source": {
         "tcp-port": {},
         "udp-port": {}
+      },
+      "service_name": {
+        "destination": {
+          "tcp-port": {
+            "port": {}
+          },
+          "udp-port": {
+            "port": {}
+          }
+        },
+        "no": {
+          "destination": {
+            "tcp-port": {},
+            "udp-port": {}
+          },
+          "source": {
+            "tcp-port": {},
+            "udp-port": {}
+          }
+        },
+        "protocol": {
+          "protocol": {}
+        },
+        "source": {
+          "tcp-port": {
+            "port": {}
+          },
+          "udp-port": {
+            "port": {}
+          }
+        }
       }
     },
-    "validity-period": {},
+    "validity-period": {
+      "name": {
+        "no": {}
+      }
+    },
     "vlan": {
-      "group": {}
+      "group": {
+        "group_name": {
+          "no": {
+            "vlanstart": {}
+          },
+          "vlanstart": {}
+        }
+      }
+    },
+    "31-149": {},
+    "no": {
+      "action": {
+        "action_name": {}
+      }
+    },
+    "servers": {
+      "40-4": {}
     }
   },
   "port-mapping": {
@@ -2192,7 +4976,10 @@
     }
   },
   "power": {
-    "slot": {}
+    "slot": {
+      "chassis/slot": {}
+    },
+    "61-24": {}
   },
   "powersupply": {
     "enable": {},
@@ -2243,8 +5030,12 @@
     },
     "log": {
       "console": {},
-      "level": {},
-      "lines": {}
+      "level": {
+        "level": {}
+      },
+      "lines": {
+        "lines": {}
+      }
     },
     "phones": {},
     "port": {
@@ -2260,7 +5051,14 @@
         "ingress-bandwidth": {}
       },
       "reset": {},
-      "trusted": {}
+      "trusted": {},
+      "chassis/slot/port": {
+        "dei": {},
+        "no": {
+          "dei": {},
+          "trusted": {}
+        }
+      }
     },
     "qsi": {
       "dcb": {
@@ -2292,27 +5090,57 @@
       "system-default": {}
     },
     "quarantine": {
-      "mac-group": {}
+      "mac-group": {
+        "mac_group": {}
+      }
     },
     "reset": {},
     "revert": {},
     "stats": {
-      "interval": {},
+      "interval": {
+        "seconds": {}
+      },
       "reset": {}
     },
     "switch-group": {},
     "trust-ports": {},
-    "user-port": {}
+    "user-port": {},
+    "no": {
+      "dei": {},
+      "forward": {
+        "log": {}
+      },
+      "log": {
+        "console": {},
+        "level": {}
+      },
+      "phones": {},
+      "quarantine": {
+        "mac-group": {}
+      },
+      "trust-ports": {},
+      "user-port": {}
+    }
   },
   "related": {
     "documentation": {}
   },
   "reload": {
-    "all": {},
-    "chassis-id": {},
+    "all": {
+      "cancel": {}
+    },
+    "chassis-id": {
+      "cancel": {},
+      "chassis": {}
+    },
     "from": {},
-    "secondary": {},
-    "slot": {}
+    "secondary": {
+      "cancel": {}
+    },
+    "slot": {
+      "chassis/slot": {},
+      "slot": {}
+    }
   },
   "reset-to-factory": {},
   "revokesshkey": {},
@@ -2440,14 +5268,24 @@
   "sflow": {
     "agent": {
       "extended": {
-        "gateway-info": {},
-        "router-info": {},
-        "switch-info": {}
+        "gateway-info": {
+          "admin-state": {}
+        },
+        "router-info": {
+          "admin-state": {}
+        },
+        "switch-info": {
+          "admin-state": {}
+        }
+      },
+      "ip": {
+        "ip_address": {}
       }
     },
     "poller": {},
     "receiver": {},
-    "sampler": {}
+    "sampler": {},
+    "51-8": {}
   },
   "sftp": {},
   "show": {
@@ -2468,10 +5306,14 @@
       "profile": {},
       "radius": {
         "config": {},
-        "health-check-config": {}
+        "health-check-config": {},
+        "health-chec-config": {}
       },
       "server": {
-        "statistics": {}
+        "statistics": {},
+        "server_name": {
+          "statistics": {}
+        }
       },
       "session": {
         "console": {
@@ -2498,16 +5340,32 @@
       }
     },
     "active-lease-service": {
-      "status": {}
+      "status": {
+        "dhcp-snooping": {
+          "admin-state": {}
+        }
+      }
     },
     "alarm": {
       "event": {
-        "config": {}
+        "config": {
+          "chassis": {
+            "chassis-id": {}
+          }
+        }
       },
       "input": {
-        "config": {}
+        "config": {
+          "chassis": {
+            "chassis_id": {}
+          }
+        }
       },
-      "status": {}
+      "status": {
+        "chassis": {
+          "chassis-id": {}
+        }
+      }
     },
     "app-fingerprint": {
       "app-group": {},
@@ -2532,7 +5390,9 @@
       "ipv6-flow-table": {
         "threat-insight": {}
       },
-      "l4port-exclude": {},
+      "l4port-exclude": {
+        "range-id": {}
+      },
       "port": {},
       "stats": {},
       "vc-topology": {}
@@ -2574,7 +5434,15 @@
       "snapshot": {},
       "status": {},
       "vcm-snapshot": {
-        "chassis-id": {}
+        "chassis-id": {
+          "oper_chassis": {
+            "virtual-chassis": {
+              "split-protection": {
+                "admin-state": {}
+              }
+            }
+          }
+        }
       }
     },
     "device-profile": {
@@ -2582,7 +5450,9 @@
       "config": {},
       "ports": {},
       "signatures": {
-        "from": {}
+        "from": {
+          "file-name": {}
+        }
       },
       "summary": {}
     },
@@ -2597,7 +5467,9 @@
         "service": {}
       },
       "isf-statistics": {
-        "service": {}
+        "service": {
+          "service_id": {}
+        }
       },
       "port": {},
       "service": {},
@@ -2613,7 +5485,8 @@
       "ipv6-source-filter": {}
     },
     "dhl": {
-      "link": {}
+      "link": {},
+      "dhl_num": {}
     },
     "dns": {},
     "efm-oam": {
@@ -2627,7 +5500,17 @@
         "remote": {
           "detail": {}
         },
-        "statistics": {}
+        "statistics": {},
+        "chassis/slot/port": {
+          "detail": {},
+          "history": {},
+          "l1-ping": {
+            "detail": {}
+          },
+          "remote": {
+            "detail": {}
+          }
+        }
       }
     },
     "erp": {
@@ -2640,16 +5523,27 @@
         "l2pt-statistics": {}
       },
       "port": {},
-      "sap-profile": {},
+      "sap-profile": {
+        "sap_profile_name": {}
+      },
       "sap": {},
-      "strict-cvlan-filter": {},
+      "strict-cvlan-filter": {
+        "loopback-test": {
+          "profile_name": {
+            "destination-mac": {
+              "dest_address": {}
+            }
+          }
+        }
+      },
       "uni": {
         "l2pt-statistics": {}
       },
       "uni-profile": {
         "l2pt-statistics": {}
       },
-      "vlan": {}
+      "vlan": {},
+      "custom-l2-profile": {}
     },
     "ethoam": {
       "cfmstack": {},
@@ -2660,17 +5554,80 @@
       "domain": {
         "association": {
           "end-point": {}
+        },
+        "md_name": {
+          "association": {
+            "ma_name": {
+              "end-point": {
+                "mep_id": {}
+              }
+            }
+          }
         }
       },
-      "linktrace-reply": {},
-      "linktrace-tran-id": {},
-      "one-way-delay": {},
-      "remote-endpoint": {
+      "linktrace-reply": {
+        "domain": {
+          "md_name": {
+            "association": {
+              "ma_name": {
+                "endpoint": {
+                  "s_mepid": {
+                    "tran-": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "linktrace-tran-id": {
         "domain": {}
       },
-      "statistics": {},
-      "two-way-delay": {},
-      "vlan": {}
+      "one-way-delay": {
+        "domain": {
+          "md_name": {
+            "association": {
+              "ma_name": {
+                "endpoint": {
+                  "s_mepid": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "remote-endpoint": {
+        "domain": {
+          "md_name": {
+            "association": {
+              "ma_name": {
+                "end-point": {
+                  "s_mepid": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "statistics": {
+        "domain": {}
+      },
+      "two-way-delay": {
+        "domain": {
+          "md_name": {
+            "association": {
+              "ma_name": {
+                "endpoint": {
+                  "s_mepid": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "vlan": {
+        "vlan_id": {}
+      }
     },
     "event-action": {},
     "fan": {},
@@ -2693,7 +5650,10 @@
     "fibre-channel": {
       "node": {},
       "npiv-proxy": {
-        "load-balance": {}
+        "load-balance": {},
+        "load": {
+          "balance": {}
+        }
       },
       "port": {},
       "sessions": {},
@@ -2737,7 +5697,9 @@
         "mka-profile": {},
         "static": {},
         "statistics": {},
-        "wan-macsec": {}
+        "wan-macsec": {
+          "chassis/slot/port": {}
+        }
       },
       "portgroup": {},
       "ptp": {
@@ -2787,7 +5749,10 @@
             "error-count": {}
           },
           "interface": {},
-          "statistics": {}
+          "statistics": {},
+          "insert-agent-informaton": {
+            "error-count": {}
+          }
         }
       },
       "directed-broadcast": {},
@@ -2804,7 +5769,17 @@
         "route": {},
         "tunnel": {}
       },
-      "dynamic-proxy-arp": {},
+      "dynamic-proxy-arp": {
+        "Learned": {
+          "Port": {
+            "Security": {
+              "Commands": {
+                "port-security": {}
+              }
+            }
+          }
+        }
+      },
       "emp-interfaces": {},
       "emp-routes": {},
       "evpn": {
@@ -2856,7 +5831,11 @@
       "ospf": {
         "area": {
           "range": {},
-          "stub": {}
+          "stub": {},
+          "area_id": {
+            "range": {},
+            "stub": {}
+          }
         },
         "border-routers": {},
         "ext-lsdb": {},
@@ -2866,10 +5845,30 @@
         },
         "lsdb": {},
         "neighbor": {},
-        "restart": {},
+        "restart": {
+          "OSPFv3": {
+            "Commands": {
+              "ipv6": {
+                "load": {
+                  "ospf": {
+                    "ipv6": {
+                      "ospf": {
+                        "admin-state": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "routes": {},
         "virtual-link": {},
-        "virtual-neighbor": {}
+        "virtual-neighbor": {
+          "area_id": {
+            "router_id": {}
+          }
+        }
       },
       "pim": {
         "anycast-rp": {},
@@ -2908,11 +5907,19 @@
       "router-id": {},
       "routes": {},
       "service": {
-        "source-ip": {}
+        "source-ip": {},
+        "evpn": {
+          "proxy-arp": {}
+        }
       },
       "slb": {
         "cluster": {
-          "server": {}
+          "server": {},
+          "name": {
+            "server": {
+              "ip_address": {}
+            }
+          }
         },
         "clusters": {},
         "probes": {},
@@ -2927,40 +5934,67 @@
         "relay": {
           "statistics": {}
         }
+      },
+      "vrrp": {
+        "track": {}
       }
     },
     "ipmvlan": {
       "address": {},
       "c-tag": {},
       "config": {},
-      "port-config": {}
+      "port-config": {
+        "34-20": {
+          "ipv6": {}
+        }
+      }
     },
     "ipsec": {
       "key": {},
       "policy": {},
       "sa": {},
-      "statistics": {}
+      "statistics": {
+        "RIP": {
+          "Commands": {}
+        }
+      }
     },
     "ipv6": {
       "access-list": {},
       "bgp": {
         "aggregate-address": {},
         "neighbors": {
-          "policy": {},
+          "policy": {
+            "ipv6_address": {}
+          },
           "statistics": {},
           "timers": {}
         },
         "network": {},
         "path": {},
-        "routes": {}
+        "routes": {
+          "ipv6": {
+            "bgp": {
+              "network": {
+                "ipv6_address/prefix_length": {}
+              }
+            }
+          }
+        }
       },
       "dhcp": {
         "guard": {},
-        "relay": {}
+        "relay": {
+          "dhcp-server": {}
+        }
       },
       "dos": {
         "config": {},
-        "statistics": {}
+        "statistics": {
+          "IPsec": {
+            "Commands": {}
+          }
+        }
       },
       "emp-interface": {},
       "emp-routes": {},
@@ -2970,7 +6004,11 @@
         "statistics": {}
       },
       "import": {},
-      "information": {},
+      "information": {
+        "ipv6": {
+          "redist": {}
+        }
+      },
       "interface": {},
       "mroute": {
         "interface": {}
@@ -2999,7 +6037,11 @@
         "interface": {},
         "lsdb": {},
         "neighbor": {},
-        "restart": {},
+        "restart": {
+          "IS-IS": {
+            "Commands": {}
+          }
+        },
         "routes": {},
         "virtual-link": {}
       },
@@ -3066,7 +6108,9 @@
       }
     },
     "issu": {
-      "status": {}
+      "status": {
+        "auto-config-abort": {}
+      }
     },
     "kerberos": {
       "configuration": {},
@@ -3083,7 +6127,17 @@
       "power-rule": {},
       "priority-disconnect": {},
       "status": {},
-      "usage-threshold": {}
+      "usage-threshold": {},
+      "slot": {
+        "chassis/slot": {
+          "high-resistance-detection": {},
+          "status": {
+            "UDLD": {
+              "Commands": {}
+            }
+          }
+        }
+      }
     },
     "license-client": {
       "info": {}
@@ -3130,15 +6184,21 @@
     },
     "log": {
       "events": {
-        "output": {}
+        "output": {
+          "filename": {}
+        }
       },
       "swlog": {}
     },
     "loopback-detection": {
-      "linkagg": {},
+      "linkagg": {
+        "agg_id": {}
+      },
       "port": {},
       "statistics": {
-        "port": {}
+        "port": {
+          "chassis/slot/port": {}
+        }
       }
     },
     "loopback-test": {},
@@ -3155,14 +6215,26 @@
       },
       "evpn-vxlan": {},
       "learning-state": {},
-      "mode": {}
+      "mode": {
+        "mac-ping": {
+          "dst-mac": {
+            "mac_address": {
+              "vlan": {
+                "vlan_id": {}
+              }
+            }
+          }
+        }
+      }
     },
     "mac-range": {
       "alloc": {}
     },
     "me": {},
     "message-service": {
-      "status": {}
+      "status": {
+        "active-lease-service": {}
+      }
     },
     "microcode": {},
     "module": {
@@ -3178,9 +6250,16 @@
         "interface": {},
         "neighbor": {},
         "session": {
-          "rx-addresses": {},
-          "rx-labels": {},
-          "tx-labels": {}
+          "rx-addresses": {
+            "peer_address": {}
+          },
+          "rx-labels": {
+            "peer-address": {}
+          },
+          "tx-labels": {
+            "peer-address": {}
+          },
+          "peer_address": {}
         }
       },
       "vpls": {
@@ -3188,7 +6267,8 @@
       },
       "vpws": {
         "vc-table": {}
-      }
+      },
+      "vpls-mesh": {}
     },
     "mrp": {
       "domain": {},
@@ -3208,7 +6288,11 @@
       "license": {}
     },
     "naas-agent": {
-      "status": {}
+      "status": {
+        "OpenFlow": {
+          "Commands": {}
+        }
+      }
     },
     "ntp": {
       "client": {
@@ -3251,7 +6335,11 @@
       },
       "rule": {},
       "server": {
-        "events": {},
+        "events": {
+          "AAA": {
+            "Commands": {}
+          }
+        },
         "long": {},
         "rules": {},
         "statistics": {}
@@ -3274,12 +6362,34 @@
       "status": {}
     },
     "port-monitoring": {
-      "file": {},
+      "file": {
+        "port_monitor_sessionid": {
+          "sFlow": {
+            "Commands": {}
+          }
+        }
+      },
       "status": {}
     },
     "port-security": {
       "brief": {},
-      "learning-window": {},
+      "learning-window": {
+        "Port": {
+          "Mirroring": {
+            "and": {
+              "Monitoring": {
+                "Commands": {
+                  "port-mirroring": {
+                    "port_mirror_sessionid": {
+                      "source": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "mac-range": {},
       "pkt-relay": {
         "filter": {}
@@ -3395,19 +6505,47 @@
       },
       "site-info": {},
       "spb": {
-        "sap": {}
+        "sap": {},
+        "service_id": {
+          "sap": {}
+        }
       },
       "tenancy": {
-        "service": {},
-        "vrf": {}
+        "service": {
+          "service_id": {}
+        },
+        "vrf": {
+          "vrf_name": {}
+        }
       },
       "vpls": {
         "mesh-sdp": {},
-        "sap": {}
+        "sap": {},
+        "vpls_id": {
+          "mesh-sdp": {
+            "<num>": {
+              "<num:num>": {}
+            }
+          },
+          "sap": {}
+        }
       },
       "vpws": {
         "mesh-sdp": {},
-        "sap": {}
+        "sap": {},
+        "vc_id": {
+          "mesh-sdp": {
+            "<num>": {
+              "<num:num>": {}
+            }
+          },
+          "sap": {}
+        }
+      },
+      "service_id": {
+        "proxy-arp": {
+          "config": {}
+        }
       }
     },
     "session": {
@@ -3424,7 +6562,17 @@
       "call-records": {},
       "config": {},
       "ports": {},
-      "registered-clients": {},
+      "registered-clients": {
+        "Automatic": {
+          "Fabric": {
+            "Commands": {
+              "auto-fabric": {
+                "admin-state": {}
+              }
+            }
+          }
+        }
+      },
       "statistics": {}
     },
     "slot": {},
@@ -3439,7 +6587,9 @@
       "tsm-map": {}
     },
     "snmp-trap": {
-      "config": {},
+      "config": {
+        "event-action": {}
+      },
       "filter-ip": {},
       "replay-ip": {}
     },
@@ -3478,14 +6628,26 @@
         "info": {},
         "ingress-mac-filter": {},
         "interface": {},
-        "multicast-sources-spf": {},
+        "multicast-sources-spf": {
+          "bvlan": {
+            "bvlan_id": {
+              "bmac": {
+                "mac_address": {}
+              }
+            }
+          }
+        },
         "multicast-sources": {},
         "multicast-table": {},
         "nodes": {},
         "rapid-lsp-converge-info": {},
         "rapid-lsp-converge-table": {},
         "services": {},
-        "spf": {},
+        "spf": {
+          "bvlan": {
+            "bvlan_id": {}
+          }
+        },
         "unicast-table": {}
       }
     },
@@ -3541,10 +6703,14 @@
         "port": {}
       },
       "neighbor": {
-        "port": {}
+        "port": {
+          "chassis/slot/port": {}
+        }
       },
       "statistics": {
-        "port": {}
+        "port": {
+          "chassis/slot/port": {}
+        }
       },
       "status": {
         "port": {}
@@ -3556,10 +6722,30 @@
     },
     "unp": {
       "classification-rule": {},
-      "classification": {},
+      "classification": {
+        "rule_type": {}
+      },
       "domain": {},
       "fqdn": {
-        "resolved-ip": {}
+        "resolved-ip": {
+          "fqdn": {
+            "string": {
+              "Application": {
+                "Monitoring": {
+                  "and": {
+                    "Enforcement": {
+                      "Commands": {
+                        "app-mon": {
+                          "admin-state": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "global": {
         "configuration": {}
@@ -3586,7 +6772,9 @@
         "map": {}
       },
       "redirect": {
-        "allowed-auth-server": {}
+        "allowed-auth-server": {
+          "name": {}
+        }
       },
       "restricted-role": {},
       "router-auth": {
@@ -3601,7 +6789,9 @@
       },
       "user-role": {},
       "vpls": {
-        "far-end-ip-list": {}
+        "far-end-ip-list": {
+          "ip_list_name": {}
+        }
       },
       "vxlan": {
         "far-end-ip-list": {}
@@ -3624,7 +6814,21 @@
       "slot-reset-list": {},
       "split-protection": {
         "helper": {
-          "status": {}
+          "status": {
+            "Ethernet": {
+              "Ring": {
+                "Protection": {
+                  "Commands": {
+                    "erp-ring": {
+                      "ring_id": {
+                        "port1": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         },
         "status": {},
         "vc-units": {}
@@ -3644,7 +6848,17 @@
       "statistics": {},
       "virtual-machines": {}
     },
-    "vrf-profiles": {},
+    "vrf-profiles": {
+      "IPv6": {
+        "Commands": {
+          "ipv6": {
+            "interface": {
+              "if_name": {}
+            }
+          }
+        }
+      }
+    },
     "vrf": {},
     "vrrp": {
       "group-association": {},
@@ -3672,6 +6886,38 @@
       },
       "services-cache": {},
       "services": {}
+    },
+    "ethernet-services": {
+      "nni": {},
+      "sap": {}
+    },
+    "global": {
+      "status": {
+        "3-13": {}
+      }
+    },
+    "hardware": {
+      "info": {}
+    },
+    "neighbor": {
+      "ports": {
+        "3-20": {}
+      }
+    },
+    "pim": {
+      "notifications": {
+        "36-121": {}
+      }
+    },
+    "port": {
+      "statistics": {
+        "18-47": {}
+      }
+    },
+    "routing": {
+      "information": {
+        "37-17": {}
+      }
     }
   },
   "sip-snooping": {
@@ -3707,9 +6953,23 @@
     "security": {
       "tsm": {}
     },
-    "snmp-engineid-type": {},
+    "snmp-engineid-type": {
+      "mac-address": {
+        "snmp-engineid": {
+          "default": {}
+        }
+      }
+    },
     "station": {},
-    "tsm-map": {}
+    "tsm-map": {
+      "remote-identity": {
+        "remote_string": {
+          "user": {
+            "user_string": {}
+          }
+        }
+      }
+    }
   },
   "snmp-trap": {
     "absorption": {},
@@ -3765,23 +7025,39 @@
   "spb": {
     "bvlan": {},
     "ipvpn": {
-      "bind": {},
+      "bind": {
+        "vrf": {}
+      },
       "redist": {}
     },
     "ipvpn6": {
-      "bind": {},
+      "bind": {
+        "vrf": {}
+      },
       "redist": {}
     },
     "isis": {
       "admin-state": {},
-      "area-address": {},
-      "bridge-priority": {},
+      "area-address": {
+        "area_address": {}
+      },
+      "bridge-priority": {
+        "priority": {}
+      },
       "bvlan": {
         "ect-id": {},
-        "tandem-multicast-mode": {}
+        "tandem-multicast-mode": {},
+        "bvlan_id": {
+          "ect-id": {
+            "ect_id": {}
+          },
+          "tandem-multicast-mode": {}
+        }
       },
       "control-address": {},
-      "control-bvlan": {},
+      "control-bvlan": {
+        "bvlan_id": {}
+      },
       "graceful-restart": {
         "helper": {}
       },
@@ -3791,12 +7067,17 @@
       "overload": {},
       "rapid-lsp-converge": {},
       "source-id": {},
-      "spf-wait": {}
+      "spf-wait": {},
+      "source-": {
+        "id": {}
+      }
     }
   },
   "ssh": {
     "enforce-pubkey-auth": {},
-    "login-grace-time": {},
+    "login-grace-time": {
+      "seconds": {}
+    },
     "strong-ciphers": {},
     "strong-hmacs": {}
   },
@@ -3830,7 +7111,9 @@
     }
   },
   "state": {},
-  "statistics": {},
+  "statistics": {
+    "67-29": {}
+  },
   "super-password": {},
   "super-user-password": {},
   "swlog": {
@@ -3847,19 +7130,26 @@
     "syslog-facility-id": {}
   },
   "system": {
-    "contact": {},
+    "contact": {
+      "text_string": {}
+    },
     "date": {},
     "daylight-savings-time": {},
     "fips": {
       "admin-state": {}
     },
-    "location": {},
-    "name": {},
+    "location": {
+      "text_string": {}
+    },
+    "name": {
+      "text_string": {}
+    },
     "security": {
       "crypto-strong-security": {}
     },
     "time": {},
-    "timezone": {}
+    "timezone": {},
+    "information": {}
   },
   "takeover": {},
   "tcam": {
@@ -3869,7 +7159,9 @@
     "support": {}
   },
   "tee": {},
-  "telnet": {},
+  "telnet": {
+    "63-43": {}
+  },
   "test-oam": {
     "direction": {},
     "duration": {
@@ -3935,7 +7227,9 @@
   "udld": {
     "echo-wait-timer": {},
     "mode": {},
-    "port": {},
+    "port": {
+      "chassis/slot/port": {}
+    },
     "probe-timer": {}
   },
   "umount": {},
@@ -3958,17 +7252,35 @@
     "auth-server-down": {
       "port-bounce": {}
     },
-    "auth-server-down-timeout": {},
+    "auth-server-down-timeout": {
+      "seconds": {}
+    },
     "classification": {
       "authentication-type": {},
-      "domain": {},
-      "ip-address": {},
+      "domain": {
+        "domain_id": {}
+      },
+      "ip-address": {
+        "ip_address": {
+          "mask": {
+            "subnet_mask": {}
+          }
+        }
+      },
       "lldp": {
         "med-endpoint": {}
       },
-      "mac-address": {},
-      "mac-oui": {},
-      "mac-range": {},
+      "mac-address": {
+        "mac_address": {}
+      },
+      "mac-oui": {
+        "mac_oui": {}
+      },
+      "mac-range": {
+        "low_mac_address": {
+          "high_mac_address": {}
+        }
+      },
       "port": {},
       "vlan-tag": {}
     },
@@ -3984,13 +7296,47 @@
       "mac-oui": {},
       "mac-range": {},
       "port": {},
-      "vlan-tag": {}
+      "vlan-tag": {},
+      "rule_name": {
+        "authentication-type": {},
+        "device-type": {
+          "device_name": {}
+        },
+        "domain": {
+          "domain_id": {}
+        },
+        "ip-address": {
+          "ip_address": {
+            "mask": {
+              "subnet_mask": {}
+            }
+          }
+        },
+        "lldp": {
+          "med-endpoint": {}
+        },
+        "mac-address": {
+          "mac_address": {}
+        },
+        "mac-oui": {
+          "mac_oui": {}
+        },
+        "mac-range": {
+          "low_mac_address": {
+            "high_mac_address": {}
+          }
+        },
+        "vlan-tag": {}
+      }
     },
     "default-profile": {},
-    "delay-learning": {},
+    "delay-learning": {
+      "seconds": {}
+    },
     "direction": {},
     "domain": {
-      "description": {}
+      "description": {},
+      "domain_id": {}
     },
     "dynamic-profile-configuration": {},
     "dynamic-service": {},
@@ -3999,7 +7345,11 @@
     "ipv6-drop": {},
     "l2-profile": {},
     "l2gre": {
-      "far-end-ip-list": {}
+      "far-end-ip-list": {
+        "ip_list_name": {
+          "ip_address": {}
+        }
+      }
     },
     "mac-authentication": {
       "allow-eap": {},
@@ -4007,10 +7357,18 @@
     },
     "mac-mobility": {},
     "multi-untag-sap": {},
-    "network-group": {},
+    "network-group": {
+      "net_group_name": {
+        "ip_address": {}
+      }
+    },
     "policy": {
-      "validity-location": {},
-      "validity-period": {}
+      "validity-location": {
+        "policy_name": {}
+      },
+      "validity-period": {
+        "policy_name": {}
+      }
     },
     "port": {
       "ap-mode": {},
@@ -4045,29 +7403,110 @@
       "period-policy": {},
       "qos-policy-list": {},
       "saa-profile": {},
-      "trust-tagged-vlans": {}
+      "trust-tagged-vlans": {},
+      "profile_name": {
+        "authentication-flag": {},
+        "captive-portal-authentication": {},
+        "captive-portal-profile": {
+          "cp_profile_name": {}
+        },
+        "inactivity-interval": {
+          "seconds": {}
+        },
+        "kerberos-authentication": {},
+        "location-policy": {
+          "policy_name": {}
+        },
+        "mac-mobility": {},
+        "map": {
+          "service-type": {
+            "l2gre": {
+              "tag-value": {}
+            },
+            "spb": {
+              "tag-value": {}
+            },
+            "static": {
+              "tag-value": {}
+            },
+            "vpls": {
+              "tag-value": {}
+            },
+            "vxlan": {
+              "tag-value": {}
+            }
+          },
+          "vlan": {
+            "vlan_id": {}
+          }
+        },
+        "maximum-egress-bandwidth": {
+          "bps": {}
+        },
+        "maximum-egress-depth": {
+          "bytes": {}
+        },
+        "maximum-ingress-bandwidth": {
+          "bps": {}
+        },
+        "maximum-ingress-depth": {
+          "bytes": {}
+        },
+        "mobile-tag": {},
+        "period-policy": {
+          "policy_name": {}
+        },
+        "qos-policy-list": {
+          "list_name": {}
+        },
+        "saa-profile": {
+          "profile_name": {}
+        },
+        "trust-tagged-vlans": {}
+      }
     },
     "redirect": {
       "allowed-auth-server": {
-        "polling-interval": {}
+        "polling-interval": {},
+        "name": {}
       },
-      "allowed-name": {},
-      "pause-timer": {},
+      "allowed-name": {
+        "name": {
+          "ip-address": {
+            "ip_address": {
+              "ip-mask": {
+                "ip_mask": {}
+              }
+            }
+          }
+        }
+      },
+      "pause-timer": {
+        "seconds": {}
+      },
       "port-bounce": {},
-      "proxy-server-port": {},
+      "proxy-server-port": {
+        "proxy_port": {}
+      },
       "server": {}
     },
     "restricted-role": {
       "policy-list": {}
     },
     "router-auth": {
-      "cp-profile": {},
+      "cp-profile": {
+        "cp_profile_name": {}
+      },
       "user": {
         "flush": {}
       },
-      "user-group": {}
+      "user-group": {
+        "user_group_name": {}
+      }
     },
-    "saa-profile": {},
+    "saa-profile": {
+      "profile_name": {}
+    },
     "sw-supp-secure-mode": {},
     "system-default": {
       "bvlan-mod": {},
@@ -4077,7 +7516,8 @@
       "service-base": {},
       "service-mod": {},
       "vlan-xlation": {},
-      "vpls-signaling": {}
+      "vpls-signaling": {},
+      "vlan-translation": {}
     },
     "trust-tag": {},
     "user": {
@@ -4087,15 +7527,34 @@
       "authentication-type": {},
       "cp-status-post-login": {},
       "policy-list": {},
-      "profile": {}
+      "profile": {},
+      "role_name": {
+        "authentication-type": {},
+        "cp-status-post-login": {},
+        "policy-list": {
+          "list_name": {}
+        }
+      }
     },
     "vlan": {},
     "vpls": {
-      "far-end-ip-list": {}
+      "far-end-ip-list": {
+        "ip_list_name": {
+          "ip_address": {}
+        }
+      }
     },
     "vxlan": {
-      "far-end-ip-list": {}
-    }
+      "far-end-ip-list": {
+        "ip_list_name": {
+          "ip_address": {}
+        }
+      }
+    },
+    "802.1x": {
+      "eapol-version": {}
+    },
+    "802.1x-pass-through": {}
   },
   "update": {
     "fpga-cpld": {},
@@ -4112,27 +7571,50 @@
     "lockout": {
       "unlock": {}
     },
-    "lockout-duration": {},
-    "lockout-threshold": {},
-    "lockout-window": {},
+    "lockout-duration": {
+      "minutes": {}
+    },
+    "lockout-threshold": {
+      "number": {}
+    },
+    "lockout-window": {
+      "minutes": {}
+    },
     "password-expiration": {},
-    "password-history": {},
-    "password-min-age": {},
+    "password-history": {
+      "number": {}
+    },
+    "password-min-age": {
+      "days": {}
+    },
     "password-policy": {
       "cannot-contain-consecutive-characters": {},
       "cannot-contain-username": {},
-      "min-digit": {},
-      "min-lowercase": {},
-      "min-nonalpha": {},
-      "min-uppercase": {}
+      "min-digit": {
+        "number": {}
+      },
+      "min-lowercase": {
+        "number": {}
+      },
+      "min-nonalpha": {
+        "number": {}
+      },
+      "min-uppercase": {
+        "number": {}
+      }
     },
     "password-refresh": {},
     "password-size": {
-      "min": {}
+      "min": {
+        "size": {}
+      }
     },
     "profile": {
       "reset": {},
       "save": {}
+    },
+    "username": {
+      "allow-ssh": {}
     }
   },
   "vc-takeover": {},
@@ -4172,7 +7654,20 @@
       "tagged": {},
       "untagged": {}
     },
-    "mtu-ip": {}
+    "mtu-ip": {},
+    "vlan_id": {
+      "ipv6": {
+        "interface": {
+          "if_name": {
+            "tunnel": {}
+          }
+        }
+      },
+      "mtu-ip": {
+        "size": {}
+      }
+    },
+    "vlan_list": {}
   },
   "vm-snooping": {
     "admin-state": {},
@@ -4224,7 +7719,8 @@
     "ssl-strong-ciphers": {},
     "wlan": {
       "cluster-virtual-ip": {
-        "precedence": {}
+        "precedence": {},
+        "virtual-ip-address-of-wlan-cluster": {}
       }
     }
   },
@@ -4246,29 +7742,88 @@
     "terminal": {}
   },
   "zeroconf": {
-    "access-vlan-list": {},
-    "client-policy": {},
-    "edge-ip-list": {
-      "mode": {}
+    "access-vlan-list": {
+      "vlan_id1...vlan_idn": {}
     },
-    "gateway-vlan-list": {},
+    "client-policy": {
+      "policy_name": {}
+    },
+    "edge-ip-list": {
+      "mode": {},
+      "ip_address1...ip_addressn": {}
+    },
+    "gateway-vlan-list": {
+      "vlan_id1...vlan_idn": {}
+    },
     "mdns": {
       "admin-state": {}
     },
     "mode": {},
     "refresh-database": {},
-    "responder-ip": {},
-    "server-policy": {},
+    "responder-ip": {
+      "ip_address": {}
+    },
+    "server-policy": {
+      "policy_name": {}
+    },
     "service-id": {
       "query-request": {}
     },
     "service-list": {},
     "service-rule": {
       "policy": {},
-      "service-id": {}
+      "service-id": {},
+      "rule_name": {
+        "server-policy": {
+          "server_policy_name": {
+            "client-policy": {
+              "client_policy_name": {}
+            }
+          }
+        }
+      }
     },
     "ssdp": {
       "admin-state": {}
+    }
+  },
+  "bridge": {
+    "ID": {
+      "8-20": {}
+    }
+  },
+  "domain": {
+    "md_name": {},
+    "name": {
+      "70-2": {}
+    }
+  },
+  "file": {},
+  "ospf": {},
+  "pim": {},
+  "port": {
+    "acct_port]": {},
+    "assignments": {
+      "5-4": {}
+    },
+    "chassis/slot/port": {},
+    "mirroring": {
+      "50-2": {}
+    },
+    "monitoring": {
+      "source": {
+        "50-11": {}
+      }
+    },
+    "port": {},
+    "virtual-chassis": {}
+  },
+  "rip": {
+    "24-48": {}
+  },
+  "static": {
+    "link": {
+      "aggregation": {}
     }
   }
 }
