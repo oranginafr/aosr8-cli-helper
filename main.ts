@@ -6,7 +6,7 @@ interface CommandNode {
     [key: string]: CommandNode;
 }
 
-export default class VossPlugin extends Plugin {
+export default class Aosr8Plugin extends Plugin {
     normalizedData: CommandNode = {};
 
     async onload() {
@@ -14,7 +14,7 @@ export default class VossPlugin extends Plugin {
         
         // 1. Initialize Autocomplete Data
         this.normalizedData = this.normalizeTree(commandDataRaw);
-        this.registerEditorSuggest(new VossSuggest(this.app, this.normalizedData));
+        this.registerEditorSuggest(new Aosr8Suggest(this.app, this.normalizedData));
 
         // 2. Register Syntax Highlighting for Reading Mode
         this.registerMarkdownCodeBlockProcessor("aosr8", (source, el, ctx) => {
@@ -35,7 +35,7 @@ export default class VossPlugin extends Plugin {
 
                 // 2.2 Tokenize line preserving delimiters
                 // Split by spaces, tabs, common delimiters. Capturing group () includes the delimiter in the result array.
-                const parts = line.split(/([ \t]+|[\(\)[\]\{\},])/); 
+                const parts = line.split(/([ \t]+|[()[\]{} M,])/); 
 
                 for (const part of parts) {
                     if (part === "") continue;
@@ -119,7 +119,7 @@ export default class VossPlugin extends Plugin {
     }
 }
 
-class VossSuggest extends EditorSuggest<string> {
+class Aosr8Suggest extends EditorSuggest<string> {
     data: CommandNode;
 
     constructor(app: App, data: CommandNode) {

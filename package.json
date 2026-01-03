@@ -1,7 +1,7 @@
 {
   "name": "aosr8-cli-helper",
-  "version": "1.0.0",
-  "description": "Autocompletion and syntax highlighting for AOSR8 CLI commands.",
+  "version": "1.0.1",
+  "description": "Autocompletion and syntax highlighting for Alcatel-Lucent AOS Release 8 CLI commands.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
@@ -12,9 +12,11 @@
     "plugin",
     "cli",
     "network",
-    "voss"
+    "aos",
+    "alcatel",
+    "switch"
   ],
-  "author": "Your Name",
+  "author": "Gemini & User",
   "license": "MIT",
   "devDependencies": {
     "@codemirror/language": "^6.12.1",
