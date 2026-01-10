@@ -1,6 +1,6 @@
 {
   "name": "aosr8-cli-helper",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Autocompletion and syntax highlighting for Alcatel-Lucent AOS Release 8 CLI commands.",
   "main": "main.js",
   "scripts": {
